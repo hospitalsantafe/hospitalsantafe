@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollReveal from '@/components/common/ScrollReveal';
 import type { Metadata } from 'next';
 import './page.css';
 
@@ -36,8 +37,8 @@ export default function MaternidadPage() {
                         <p className="text-neutral">Cuidamos de ti y tu bebé con experiencia y calidez</p>
                     </div>
 
-                    <div className="grid grid--4">
-                        <div className="benefit-card">
+                    <ScrollReveal stagger className="grid grid--4">
+                        <div className="benefit-card" data-animate>
                             <div className="benefit-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <line x1="12" y1="1" x2="12" y2="23" />
@@ -48,7 +49,7 @@ export default function MaternidadPage() {
                             <p>Paquetes desde $11,000 con facilidad de pago</p>
                         </div>
 
-                        <div className="benefit-card">
+                        <div className="benefit-card" data-animate>
                             <div className="benefit-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -61,7 +62,7 @@ export default function MaternidadPage() {
                             <p>Aparta tu paquete con solo $500 pesos</p>
                         </div>
 
-                        <div className="benefit-card">
+                        <div className="benefit-card" data-animate>
                             <div className="benefit-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
@@ -71,7 +72,7 @@ export default function MaternidadPage() {
                             <p>Consultas prenatales con especialistas</p>
                         </div>
 
-                        <div className="benefit-card">
+                        <div className="benefit-card" data-animate>
                             <div className="benefit-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
@@ -82,7 +83,7 @@ export default function MaternidadPage() {
                             <p>Ultrasonidos de última generación</p>
                         </div>
 
-                        <div className="benefit-card">
+                        <div className="benefit-card" data-animate>
                             <div className="benefit-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -92,7 +93,7 @@ export default function MaternidadPage() {
                             <p>Espacios higiénicos y confortables</p>
                         </div>
 
-                        <div className="benefit-card">
+                        <div className="benefit-card" data-animate>
                             <div className="benefit-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <circle cx="12" cy="12" r="10" />
@@ -103,7 +104,7 @@ export default function MaternidadPage() {
                             <p>Ginecólogos y pediatras certificados</p>
                         </div>
 
-                        <div className="benefit-card">
+                        <div className="benefit-card" data-animate>
                             <div className="benefit-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -114,7 +115,7 @@ export default function MaternidadPage() {
                             <p>Atención inmediata para recién nacidos</p>
                         </div>
 
-                        <div className="benefit-card">
+                        <div className="benefit-card" data-animate>
                             <div className="benefit-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -124,7 +125,7 @@ export default function MaternidadPage() {
                             <p>100% desechable de la mejor calidad</p>
                         </div>
 
-                        <div className="benefit-card">
+                        <div className="benefit-card" data-animate>
                             <div className="benefit-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -136,7 +137,7 @@ export default function MaternidadPage() {
                             <p>Calidez y amabilidad en cada momento</p>
                         </div>
 
-                        <div className="benefit-card">
+                        <div className="benefit-card" data-animate>
                             <div className="benefit-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
@@ -146,7 +147,7 @@ export default function MaternidadPage() {
                             <h3>Estacionamiento</h3>
                             <p>Amplio para pacientes y familiares</p>
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
@@ -158,9 +159,9 @@ export default function MaternidadPage() {
                         <p className="text-neutral">Elige el paquete que mejor se adapte a tus necesidades</p>
                     </div>
 
-                    <div className="packages-grid">
+                    <ScrollReveal stagger className="packages-grid">
                         {/* Paquete Parto */}
-                        <div className="package-card">
+                        <div className="package-card" data-animate>
                             <div className="package-card__header">
                                 <h3>Paquete de Parto</h3>
                                 <div className="package-card__price">
@@ -196,7 +197,7 @@ export default function MaternidadPage() {
                         </div>
 
                         {/* Paquete Cesárea */}
-                        <div className="package-card package-card--featured">
+                        <div className="package-card package-card--featured" data-animate>
                             <div className="package-badge">Más popular</div>
                             <div className="package-card__header">
                                 <h3>Paquete de Cesárea</h3>
@@ -231,7 +232,7 @@ export default function MaternidadPage() {
                                 <p>*Apartado con $500 pesos • Abonos mensuales durante control prenatal</p>
                             </div>
                         </div>
-                    </div>
+                    </ScrollReveal>
 
                     <div className="payment-info text-center">
                         <div className="payment-features">
@@ -271,8 +272,8 @@ export default function MaternidadPage() {
                         <p className="text-neutral">Elige el nivel de confort que prefieras para tu estadía</p>
                     </div>
 
-                    <div className="grid grid--3">
-                        <div className="room-card">
+                    <ScrollReveal stagger className="grid grid--3">
+                        <div className="room-card" data-animate>
                             <div className="room-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
@@ -291,7 +292,7 @@ export default function MaternidadPage() {
                             <p className="room-price">Incluida en paquete</p>
                         </div>
 
-                        <div className="room-card room-card--featured">
+                        <div className="room-card room-card--featured" data-animate>
                             <div className="room-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
@@ -311,7 +312,7 @@ export default function MaternidadPage() {
                             <p className="room-price">Costo adicional</p>
                         </div>
 
-                        <div className="room-card">
+                        <div className="room-card" data-animate>
                             <div className="room-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
@@ -330,7 +331,7 @@ export default function MaternidadPage() {
                             </ul>
                             <p className="room-price">Costo adicional</p>
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
@@ -342,57 +343,58 @@ export default function MaternidadPage() {
                         <p className="text-neutral">Resolvemos tus dudas sobre nuestros paquetes de maternidad</p>
                     </div>
 
-                    <div className="faq-list">
-                        <details className="faq-item">
+                    <ScrollReveal stagger className="faq-list">
+                        <details className="faq-item" data-animate>
                             <summary>¿Puede mi familiar estar presente durante el parto?</summary>
                             <p>Sí, puede estar presente un familiar durante el parto o la cesárea si así lo desea. Entendemos la importancia del apoyo emocional en este momento tan especial.</p>
                         </details>
 
-                        <details className="faq-item">
+                        <details className="faq-item" data-animate>
                             <summary>¿Cuánto debo de abonar cada mes?</summary>
                             <p>No hay una cantidad fija obligatoria. Lo recomendable es abonar mínimo $500 pesos cada mes durante tu control prenatal para que el paquete esté casi pagado al final del embarazo. Puedes hacer abonos mayores según tu conveniencia.</p>
                         </details>
 
-                        <details className="faq-item">
+                        <details className="faq-item" data-animate>
                             <summary>¿Tienen diferentes tipos de habitaciones?</summary>
                             <p>Sí, tenemos 3 tipos de habitaciones: Habitación Normal (Privada) incluida en el paquete, Habitación Suite con mayor espacio, y Habitación Master Suite con amenidades premium. Las Suite y Master Suite tienen un costo adicional.</p>
                         </details>
 
-                        <details className="faq-item">
+                        <details className="faq-item" data-animate>
                             <summary>¿Puedo traer a mi ginecólogo(a) a atender mi parto?</summary>
                             <p>Claro que sí, puedes solicitar que tu ginecólogo(a) de confianza atienda tu parto en nuestras instalaciones. Solo es necesario comentarlo con anticipación para coordinar días u horarios según disponibilidad del especialista.</p>
                         </details>
 
-                        <details className="faq-item">
+                        <details className="faq-item" data-animate>
                             <summary>¿Aceptan tarjetas de crédito y débito?</summary>
                             <p>Sí, aceptamos todas las tarjetas de débito y de crédito Visa y MasterCard. Excepto American Express.</p>
                         </details>
 
-                        <details className="faq-item">
+                        <details className="faq-item" data-animate>
                             <summary>¿Se puede pagar a meses sin intereses?</summary>
                             <p>Actualmente tenemos el servicio de meses sin intereses disponible con tarjetas Bancomer. Consulta las opciones de plazo al momento de realizar tu pago.</p>
                         </details>
 
-                        <details className="faq-item">
+                        <details className="faq-item" data-animate>
                             <summary>¿Tienen servicio de urgencias las 24 horas?</summary>
                             <p>Sí, el servicio de urgencias está disponible las 24 horas del día, los 365 días del año. Contamos con personal médico y de enfermería de guardia en todo momento.</p>
                         </details>
 
-                        <details className="faq-item">
+                        <details className="faq-item" data-animate>
                             <summary>¿Los ecosonogramas 3D/4D tienen costo adicional?</summary>
                             <p>Los ecosonogramas 2D de rutina están incluidos en las consultas prenatales. Los ecosonogramas 3D/4D/5D tienen precio especial para pacientes con paquete de maternidad. Consulta tarifas en tu cita prenatal.</p>
                         </details>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
             {/* CTA Final */}
             <section className="section cta-final">
                 <div className="container text-center">
-                    <h2>¿Lista para dar el siguiente paso?</h2>
-                    <p className="text-neutral mb-8">Contáctanos y agenda tu consulta prenatal. Nuestros especialistas te atenderán con calidez</p>
+                    <ScrollReveal>
+                    <h2 data-animate>¿Lista para dar el siguiente paso?</h2>
+                    <p className="text-neutral mb-8" data-animate>Contáctanos y agenda tu consulta prenatal. Nuestros especialistas te atenderán con calidez</p>
 
-                    <div className="cta-buttons">
+                    <div className="cta-buttons" data-animate>
                         <a
                             href="https://wa.me/523331198625?text=Hola,%20me%20interesa%20información%20sobre%20los%20paquetes%20de%20maternidad"
                             target="_blank"
@@ -416,6 +418,7 @@ export default function MaternidadPage() {
                             Formulario de contacto
                         </Link>
                     </div>
+                    </ScrollReveal>
                 </div>
             </section>
         </>

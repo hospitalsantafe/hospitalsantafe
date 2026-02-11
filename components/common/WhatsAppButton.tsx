@@ -5,7 +5,7 @@ import React from 'react';
 export default function WhatsAppButton() {
     return (
         <a
-            href="https://wa.me/523312345678" // Replace with actual number if known, using placeholder
+            href="https://wa.me/523331198625?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n"
             target="_blank"
             rel="noopener noreferrer"
             className="btn--whatsapp-float"

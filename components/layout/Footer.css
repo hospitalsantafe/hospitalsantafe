@@ -35,18 +35,17 @@
     transform: scale(1.02);
 }
 
-.footer__logo .logo__icon {
-    width: 36px;
-    height: 36px;
-    color: var(--color-primary-100);
+.footer__logo-img {
+    display: block;
+    width: 160px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+    transition: opacity var(--transition-fast);
 }
 
-.footer__logo .logo__name {
-    color: var(--color-primary-100);
-}
-
-.footer__logo .logo__subtitle {
-    color: var(--color-white);
+.footer__logo:hover .footer__logo-img {
+    opacity: 1;
 }
 
 .footer__tagline {

@@ -84,8 +84,14 @@ export default function Header() {
 
             {serviciosDropdownOpen && (
               <div className="nav__dropdown-menu">
+                <Link href="/servicios" className="dropdown__link dropdown__link--highlight">
+                  Todos los servicios
+                </Link>
                 <Link href="/servicios/especialidades" className="dropdown__link">
                   Especialidades
+                </Link>
+                <Link href="/servicios/paquetes" className="dropdown__link">
+                  Paquetes Quirúrgicos
                 </Link>
                 <Link href="/servicios/estudios-imagen" className="dropdown__link">
                   Estudios de imagen
@@ -93,8 +99,8 @@ export default function Header() {
                 <Link href="/servicios/cuneros" className="dropdown__link">
                   Cuneros
                 </Link>
-                <Link href="/servicios/paquetes" className="dropdown__link">
-                  Paquetes
+                <Link href="/maternidad" className="dropdown__link">
+                  Maternidad
                 </Link>
               </div>
             )}
@@ -115,6 +121,9 @@ export default function Header() {
 
             {instalacionesDropdownOpen && (
               <div className="nav__dropdown-menu">
+                <Link href="/instalaciones" className="dropdown__link dropdown__link--highlight">
+                  Todas las instalaciones
+                </Link>
                 <Link href="/instalaciones/habitaciones" className="dropdown__link">
                   Habitaciones
                 </Link>
@@ -123,6 +132,9 @@ export default function Header() {
                 </Link>
                 <Link href="/instalaciones/cafeteria" className="dropdown__link">
                   Cafetería
+                </Link>
+                <Link href="/instalaciones/galeria" className="dropdown__link">
+                  Galería
                 </Link>
               </div>
             )}
@@ -255,8 +267,14 @@ export default function Header() {
 
             {serviciosDropdownOpen && (
               <div className="mobile-nav__submenu">
+                <Link href="/servicios" className="mobile-nav__sublink">
+                  Todos los servicios
+                </Link>
                 <Link href="/servicios/especialidades" className="mobile-nav__sublink">
                   Especialidades
+                </Link>
+                <Link href="/servicios/paquetes" className="mobile-nav__sublink">
+                  Paquetes Quirúrgicos
                 </Link>
                 <Link href="/servicios/estudios-imagen" className="mobile-nav__sublink">
                   Estudios de imagen
@@ -264,8 +282,8 @@ export default function Header() {
                 <Link href="/servicios/cuneros" className="mobile-nav__sublink">
                   Cuneros
                 </Link>
-                <Link href="/servicios/paquetes" className="mobile-nav__sublink">
-                  Paquetes
+                <Link href="/maternidad" className="mobile-nav__sublink">
+                  Maternidad
                 </Link>
               </div>
             )}
@@ -293,6 +311,9 @@ export default function Header() {
 
             {instalacionesDropdownOpen && (
               <div className="mobile-nav__submenu">
+                <Link href="/instalaciones" className="mobile-nav__sublink">
+                  Todas las instalaciones
+                </Link>
                 <Link href="/instalaciones/habitaciones" className="mobile-nav__sublink">
                   Habitaciones
                 </Link>
@@ -301,6 +322,9 @@ export default function Header() {
                 </Link>
                 <Link href="/instalaciones/cafeteria" className="mobile-nav__sublink">
                   Cafetería
+                </Link>
+                <Link href="/instalaciones/galeria" className="mobile-nav__sublink">
+                  Galería
                 </Link>
               </div>
             )}

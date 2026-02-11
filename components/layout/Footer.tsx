@@ -9,19 +9,13 @@ export default function Footer() {
                     {/* Column 1: Logo & Tagline */}
                     <div className="footer__column">
                         <Link href="/" className="footer__logo">
-                            <div className="logo">
-                                <div className="logo__icon">
-                                    <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-                                        <path d="M20 2 L20 18 M20 22 L20 38" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                                        <path d="M12 20 L28 20" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                                        <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="2" fill="none" />
-                                    </svg>
-                                </div>
-                                <div className="logo__text">
-                                    <span className="logo__name">HOSPITAL</span>
-                                    <span className="logo__subtitle">Santa Fe</span>
-                                </div>
-                            </div>
+                            <img
+                                src="/images/ultimologo.svg"
+                                alt="Hospital Santa Fe"
+                                width="160"
+                                height="53"
+                                className="footer__logo-img"
+                            />
                         </Link>
                         <p className="footer__tagline">Vivimos para servir</p>
                         <p className="footer__description">
@@ -29,15 +23,15 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    {/* Column 2: Enlaces Rápidos */}
+                    {/* Column 2: Servicios */}
                     <div className="footer__column">
                         <h3 className="footer__title">Servicios</h3>
                         <ul className="footer__links">
                             <li><Link href="/maternidad">Maternidad</Link></li>
-                            <li><Link href="/servicios">Especialidades</Link></li>
-                            <li><Link href="/estudios">Estudios de Imagen</Link></li>
-                            <li><Link href="/paquetes">Paquetes Quirúrgicos</Link></li>
-                            <li><Link href="/paquetes/cirugia-plastica">Cirugía Plástica</Link></li>
+                            <li><Link href="/servicios/especialidades">Especialidades</Link></li>
+                            <li><Link href="/servicios/estudios-imagen">Estudios de Imagen</Link></li>
+                            <li><Link href="/servicios/paquetes">Paquetes Quirúrgicos</Link></li>
+                            <li><Link href="/servicios/cuneros">Cuneros</Link></li>
                         </ul>
                     </div>
 
@@ -46,9 +40,9 @@ export default function Footer() {
                         <h3 className="footer__title">Hospital</h3>
                         <ul className="footer__links">
                             <li><Link href="/nosotros">Quiénes Somos</Link></li>
-                            <li><Link href="/nosotros/instalaciones">Instalaciones</Link></li>
-                            <li><Link href="/nosotros/habitaciones">Habitaciones</Link></li>
-                            <li><Link href="/nosotros/galeria">Galería</Link></li>
+                            <li><Link href="/instalaciones">Instalaciones</Link></li>
+                            <li><Link href="/instalaciones/habitaciones">Habitaciones</Link></li>
+                            <li><Link href="/instalaciones/galeria">Galería</Link></li>
                             <li><Link href="/contacto">Contacto</Link></li>
                         </ul>
                     </div>

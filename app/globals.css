@@ -7,18 +7,21 @@
    -------------------------------------------- */
 
 :root {
-  /* --- Primary Colors - Hospital Santa Fe Brand Green --- */
+  /* --- Primary Colors - Hospital Santa Fe Verde Médico --- */
   --color-primary-900: #0a3d29;
-  --color-primary-700: #0f5838;
-  --color-primary-600: #13814c;
-  --color-primary-500: #18a35f;
-  --color-primary-300: #4ac282;
-  --color-primary-100: #8dd9ad;
-  --color-primary-50: #c6ecd8;
+  --color-primary-700: #145C42;
+  --color-primary-600: #1B7F5E;
+  --color-primary-500: #1B7F5E;
+  --color-primary-300: #5AA88A;
+  --color-primary-100: #A3D4BC;
+  --color-primary-50: #E8F5EE;
 
-  /* --- Accent Colors - Cálido --- */
+  /* --- Accent Colors --- */
   --color-accent-500: #f4a261;
   --color-accent-300: #f6bd8c;
+  --color-rosa-maternidad: #F8E8F0;
+  --color-naranja-urgencias: #FF6B35;
+  --color-azul-confianza: #4A90E2;
 
   /* --- Neutrales ---  */
   --color-neutral-900: #1a1a1a;
@@ -38,8 +41,8 @@
   --color-error: #ef4444;
 
   /* --- Typography --- */
-  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: var(--font-montserrat), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: var(--font-open-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* --- Font Sizes (Mobile-first, accesible) --- */
   --text-xs: 0.75rem;
@@ -82,6 +85,10 @@
   /* 32px */
   --space-12: 3rem;
   /* 48px */
+  --space-5: 1.25rem;
+  /* 20px */
+  --space-10: 2.5rem;
+  /* 40px */
   --space-16: 4rem;
   /* 64px */
   --space-20: 5rem;
@@ -98,6 +105,8 @@
   /* 12px */
   --radius-xl: 1rem;
   /* 16px */
+  --radius-2xl: 1.5rem;
+  /* 24px */
   --radius-full: 9999px;
 
   /* --- Shadows --- */
@@ -105,6 +114,7 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.15);
 
   /* --- Layout --- */
   --max-width: 1280px;
@@ -115,6 +125,11 @@
   --transition-fast: 150ms ease-in-out;
   --transition-base: 300ms ease-in-out;
   --transition-slow: 500ms ease-in-out;
+
+  /* --- Easing Curves --- */
+  --ease-out: cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-material: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* --------------------------------------------
@@ -261,11 +276,6 @@ strong {
   padding: var(--space-3) var(--space-6);
   /* Default padding so buttons are never cramped */
   font-size: var(--text-sm);
-}
-
-/* CRITICAL: Ensure all images have rounded corners (highest priority) */
-img {
-  border-radius: var(--radius-lg) !important;
 }
 
 .btn:disabled {
@@ -545,35 +555,75 @@ img {
 }
 
 /* --------------------------------------------
-   8. ANIMATIONS
+   8. FOCUS & ACCESSIBILITY
    -------------------------------------------- */
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
+.btn:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
 
-  to {
+/* --------------------------------------------
+   9. SCROLL ANIMATION SYSTEM
+   -------------------------------------------- */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--ease-material), transform 0.7s var(--ease-material);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Direction variants */
+[data-animate="fade-in"] {
+  transform: none;
+}
+
+[data-animate="fade-left"] {
+  transform: translateX(-30px);
+}
+
+[data-animate="fade-right"] {
+  transform: translateX(30px);
+}
+
+[data-animate="scale-in"] {
+  transform: scale(0.95);
+}
+
+/* Stagger children — cascading delays */
+[data-stagger] > .is-visible:nth-child(1) { transition-delay: 0s; }
+[data-stagger] > .is-visible:nth-child(2) { transition-delay: 0.08s; }
+[data-stagger] > .is-visible:nth-child(3) { transition-delay: 0.16s; }
+[data-stagger] > .is-visible:nth-child(4) { transition-delay: 0.24s; }
+[data-stagger] > .is-visible:nth-child(5) { transition-delay: 0.32s; }
+[data-stagger] > .is-visible:nth-child(6) { transition-delay: 0.4s; }
+[data-stagger] > .is-visible:nth-child(7) { transition-delay: 0.48s; }
+[data-stagger] > .is-visible:nth-child(8) { transition-delay: 0.56s; }
+[data-stagger] > .is-visible:nth-child(9) { transition-delay: 0.64s; }
+[data-stagger] > .is-visible:nth-child(10) { transition-delay: 0.72s; }
+[data-stagger] > .is-visible:nth-child(11) { transition-delay: 0.8s; }
+[data-stagger] > .is-visible:nth-child(12) { transition-delay: 0.88s; }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
     opacity: 1;
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+    transform: none;
+    transition: none;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  [data-stagger] > * {
+    transition-delay: 0s !important;
   }
-}
 
-.fade-in {
-  animation: fadeIn var(--transition-base);
-}
-
-.slide-in-up {
-  animation: slideInUp var(--transition-base);
+  .hero-carousel__column {
+    animation: none;
+  }
 }

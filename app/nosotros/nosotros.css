@@ -41,7 +41,7 @@
 .content-text p {
     font-size: var(--text-lg);
     line-height: 1.8;
-    color: var(--color-gray-700);
+    color: var(--color-neutral-700);
     margin-bottom: var(--space-5);
 }
 
@@ -60,7 +60,7 @@
 
 /* Valores Section */
 .valores-section {
-    background: var(--color-gray-50);
+    background: var(--color-neutral-50);
 }
 
 .valores-section h2 {
@@ -116,7 +116,7 @@
 .valor-card p {
     font-size: var(--text-base);
     line-height: 1.6;
-    color: var(--color-gray-600);
+    color: var(--color-neutral-500);
 }
 
 /* Video Section */
@@ -133,24 +133,22 @@
     margin: 0 auto;
 }
 
-.video-placeholder {
-    aspect-ratio: 16 / 9;
-    background: var(--color-gray-100);
-    border-radius: var(--radius-2xl);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-gray-500);
+.video-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
 }
 
-.video-placeholder svg {
-    margin-bottom: var(--space-4);
-}
-
-.video-placeholder p {
-    font-size: var(--text-lg);
-    font-weight: 600;
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 /* Gallery */
@@ -194,7 +192,7 @@
 
 .cta-section .lead {
     font-size: var(--text-xl);
-    color: var(--color-gray-700);
+    color: var(--color-neutral-700);
     margin-bottom: var(--space-8);
 }
 

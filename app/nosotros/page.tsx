@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollReveal from '@/components/common/ScrollReveal';
 import './nosotros.css';
 
 export default function Nosotros() {
@@ -19,8 +20,8 @@ export default function Nosotros() {
             {/* Quiénes Somos */}
             <section className="section">
                 <div className="container">
-                    <div className="content-split">
-                        <div className="content-text">
+                    <ScrollReveal className="content-split">
+                        <div className="content-text" data-animate="fade-right">
                             <h2>¿Quiénes Somos?</h2>
                             <p>
                                 El Hospital Santa Fe es una institución médica privada con más de dos décadas
@@ -37,13 +38,13 @@ export default function Nosotros() {
                                 y procedimiento.
                             </p>
                         </div>
-                        <div className="content-image">
+                        <div className="content-image" data-animate="fade-left">
                             <img
                                 src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=700&fit=crop"
                                 alt="Hospital Santa Fe - Instalaciones modernas"
                             />
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
@@ -52,8 +53,8 @@ export default function Nosotros() {
                 <div className="container">
                     <h2 className="text-center">Nuestros Valores</h2>
 
-                    <div className="valores-grid">
-                        <div className="valor-card">
+                    <ScrollReveal stagger className="valores-grid">
+                        <div className="valor-card" data-animate>
                             <div className="valor-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -63,7 +64,7 @@ export default function Nosotros() {
                             <p>Dedicados al bienestar y recuperación de cada paciente</p>
                         </div>
 
-                        <div className="valor-card">
+                        <div className="valor-card" data-animate>
                             <div className="valor-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -74,7 +75,7 @@ export default function Nosotros() {
                             <p>Estándares de calidad en todos nuestros servicios médicos</p>
                         </div>
 
-                        <div className="valor-card">
+                        <div className="valor-card" data-animate>
                             <div className="valor-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -87,7 +88,7 @@ export default function Nosotros() {
                             <p>Trato cálido y empático con cada paciente y familiar</p>
                         </div>
 
-                        <div className="valor-card">
+                        <div className="valor-card" data-animate>
                             <div className="valor-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <circle cx="12" cy="12" r="10" />
@@ -97,7 +98,7 @@ export default function Nosotros() {
                             <h3>Disponibilidad</h3>
                             <p>Atención médica 24/7 para emergencias y urgencias</p>
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
@@ -105,15 +106,16 @@ export default function Nosotros() {
             <section className="section video-section">
                 <div className="container">
                     <h2 className="text-center">Conoce Nuestras Instalaciones</h2>
-                    <div className="video-container">
-                        <div className="video-placeholder">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <polygon points="10 8 16 12 10 16 10 8" />
-                            </svg>
-                            <p>Video presentación próximamente</p>
+                    <ScrollReveal className="video-container">
+                        <div className="video-responsive" data-animate="scale-in">
+                            <iframe
+                                src="https://www.youtube.com/embed/XypKu8GZSv8"
+                                title="Hospital Santa Fe - Conoce nuestras instalaciones"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
@@ -122,60 +124,62 @@ export default function Nosotros() {
                 <div className="container">
                     <h2 className="text-center">Galería</h2>
 
-                    <div className="gallery-grid">
-                        <div className="gallery-item">
+                    <ScrollReveal stagger className="gallery-grid">
+                        <div className="gallery-item" data-animate="scale-in">
                             <img
                                 src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&h=400&fit=crop"
                                 alt="Quirófano equipado"
                             />
                         </div>
-                        <div className="gallery-item">
+                        <div className="gallery-item" data-animate="scale-in">
                             <img
                                 src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=500&h=400&fit=crop"
                                 alt="Habitación privada"
                             />
                         </div>
-                        <div className="gallery-item">
+                        <div className="gallery-item" data-animate="scale-in">
                             <img
                                 src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=500&h=400&fit=crop"
                                 alt="Área de cuneros"
                             />
                         </div>
-                        <div className="gallery-item">
+                        <div className="gallery-item" data-animate="scale-in">
                             <img
                                 src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=500&h=400&fit=crop"
                                 alt="Equipamiento médico"
                             />
                         </div>
-                        <div className="gallery-item">
+                        <div className="gallery-item" data-animate="scale-in">
                             <img
                                 src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&h=400&fit=crop"
                                 alt="Área de urgencias"
                             />
                         </div>
-                        <div className="gallery-item">
+                        <div className="gallery-item" data-animate="scale-in">
                             <img
                                 src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=500&h=400&fit=crop"
                                 alt="Recepción"
                             />
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
             {/* CTA Section */}
             <section className="section cta-section">
                 <div className="container text-center">
-                    <h2>¿Necesitas atención médica?</h2>
-                    <p className="lead">Estamos aquí para cuidar de ti y tu familia</p>
-                    <div className="cta-buttons">
-                        <Link href="/contacto" className="btn btn--primary btn--large">
-                            Contáctanos
-                        </Link>
-                        <Link href="/servicios/especialidades" className="btn btn--secondary btn--large">
-                            Ver servicios
-                        </Link>
-                    </div>
+                    <ScrollReveal>
+                        <h2 data-animate>¿Necesitas atención médica?</h2>
+                        <p className="lead" data-animate>Estamos aquí para cuidar de ti y tu familia</p>
+                        <div className="cta-buttons" data-animate>
+                            <Link href="/contacto" className="btn btn--primary btn--large">
+                                Contáctanos
+                            </Link>
+                            <Link href="/servicios/especialidades" className="btn btn--secondary btn--large">
+                                Ver servicios
+                            </Link>
+                        </div>
+                    </ScrollReveal>
                 </div>
             </section>
         </>
