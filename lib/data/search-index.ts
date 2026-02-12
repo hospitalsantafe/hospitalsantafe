@@ -117,7 +117,7 @@ const staticPages: SearchItem[] = [
 function buildSearchIndex(): SearchItem[] {
   const items: SearchItem[] = [...staticPages];
 
-  // Especialidades (23)
+  // Especialidades (26)
   for (const esp of especialidades) {
     items.push({
       id: `esp-${esp.slug}`,
@@ -126,7 +126,9 @@ function buildSearchIndex(): SearchItem[] {
       category: 'especialidad',
       keywords: [
         esp.nombre.toLowerCase(),
+        ...(esp.subtitulo ? [esp.subtitulo.toLowerCase()] : []),
         ...esp.servicios.map(s => s.toLowerCase()),
+        ...(esp.destacados || []).map(d => d.toLowerCase()),
         esp.slug.replace(/-/g, ' '),
       ],
       href: `/servicios/especialidades/${esp.slug}`,

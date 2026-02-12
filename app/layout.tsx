@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Hospital Santa Fe",
   },
   description:
-    "Hospital Santa Fe ofrece atención médica personalizada desde 2003. Urgencias 24/7, más de 23 especialidades, paquetes de maternidad desde $11,000, cirugías y estudios de imagen en Zapotlanejo, Jalisco.",
+    "Hospital Santa Fe ofrece atención médica personalizada desde 2003. Urgencias 24/7, más de 26 especialidades, paquetes de maternidad desde $11,000, cirugías y estudios de imagen en Zapotlanejo, Jalisco.",
   keywords: [
     "hospital",
     "santa fe",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Hospital Santa Fe",
     title: "Hospital Santa Fe | Atención Médica de Calidad en Zapotlanejo",
     description:
-      "Más de 20 años brindando atención médica integral. Urgencias 24/7, 23+ especialidades, paquetes de maternidad y tecnología de vanguardia.",
+      "Más de 20 años brindando atención médica integral. Urgencias 24/7, 26+ especialidades, paquetes de maternidad y tecnología de vanguardia.",
   },
   robots: {
     index: true,
@@ -71,7 +71,7 @@ const jsonLd = {
   "@type": "MedicalBusiness",
   name: "Hospital Santa Fe",
   description:
-    "Hospital privado con más de 20 años de experiencia brindando atención médica de calidad en Zapotlanejo, Jalisco. Urgencias 24/7, 23+ especialidades médicas.",
+    "Hospital privado con más de 20 años de experiencia brindando atención médica de calidad en Zapotlanejo, Jalisco. Urgencias 24/7, 26+ especialidades médicas.",
   url: "https://hospitalsantafe.com",
   telephone: ["+52-373-734-4205", "+52-373-106-5183", "+52-333-119-8625"],
   address: {
@@ -110,15 +110,15 @@ const jsonLd = {
   medicalSpecialty: [
     "Medicina General",
     "Ginecología y Obstetricia",
-    "Pediatría",
+    "Pediatría y Neonatología",
     "Cardiología",
     "Traumatología y Ortopedia",
-    "Cirugía General",
+    "Cirugía General y Laparoscópica",
     "Dermatología",
     "Oftalmología",
     "Urología",
     "Otorrinolaringología",
-    "Neurología",
+    "Neurología y Neurocirugía",
     "Neumología",
     "Gastroenterología",
     "Endocrinología",
@@ -126,11 +126,14 @@ const jsonLd = {
     "Psicología",
     "Anestesiología",
     "Medicina Interna",
-    "Cirugía Plástica",
+    "Cirugía Plástica y Reconstructiva",
     "Cirugía Bariátrica",
-    "Radiología",
-    "Neonatología",
+    "Radiología e Imagen",
     "Oncología",
+    "Odontología",
+    "Cirugía Pediátrica",
+    "Angiología",
+    "Cirugía de Tórax y Cardiovascular",
   ],
   priceRange: "$$",
   currenciesAccepted: "MXN",
