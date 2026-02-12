@@ -303,7 +303,7 @@ strong {
   position: fixed;
   bottom: var(--space-8);
   right: var(--space-8);
-  background-color: #25d366;
+  background-color: var(--color-primary-600);
   color: var(--color-white);
   width: 60px;
   height: 60px;
@@ -318,7 +318,7 @@ strong {
 
 .btn--whatsapp-float:hover {
   transform: scale(1.1);
-  background-color: #20ba5a;
+  background-color: var(--color-primary-700);
 }
 
 /* Button variants */
@@ -361,12 +361,12 @@ strong {
 }
 
 .btn--whatsapp {
-  background-color: #25d366;
+  background-color: var(--color-primary-600);
   color: var(--color-white);
 }
 
 .btn--whatsapp:hover {
-  background-color: #20ba5a;
+  background-color: var(--color-primary-700);
   color: var(--color-white);
 }
 
@@ -381,12 +381,12 @@ strong {
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   box-shadow: var(--shadow-md);
-  transition: all var(--transition-base);
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(27, 127, 94, 0.12);
+  transform: translateY(-3px);
 }
 
 .card__title {
@@ -571,8 +571,8 @@ a:focus-visible {
 
 [data-animate] {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s var(--ease-material), transform 0.7s var(--ease-material);
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 [data-animate].is-visible {
@@ -597,19 +597,35 @@ a:focus-visible {
   transform: scale(0.95);
 }
 
-/* Stagger children — cascading delays */
+[data-animate="zoom-in"] {
+  transform: scale(0.9);
+}
+
+/* Stagger children — cascading delays (extended for large grids) */
 [data-stagger] > .is-visible:nth-child(1) { transition-delay: 0s; }
-[data-stagger] > .is-visible:nth-child(2) { transition-delay: 0.08s; }
-[data-stagger] > .is-visible:nth-child(3) { transition-delay: 0.16s; }
-[data-stagger] > .is-visible:nth-child(4) { transition-delay: 0.24s; }
-[data-stagger] > .is-visible:nth-child(5) { transition-delay: 0.32s; }
-[data-stagger] > .is-visible:nth-child(6) { transition-delay: 0.4s; }
-[data-stagger] > .is-visible:nth-child(7) { transition-delay: 0.48s; }
-[data-stagger] > .is-visible:nth-child(8) { transition-delay: 0.56s; }
-[data-stagger] > .is-visible:nth-child(9) { transition-delay: 0.64s; }
-[data-stagger] > .is-visible:nth-child(10) { transition-delay: 0.72s; }
-[data-stagger] > .is-visible:nth-child(11) { transition-delay: 0.8s; }
-[data-stagger] > .is-visible:nth-child(12) { transition-delay: 0.88s; }
+[data-stagger] > .is-visible:nth-child(2) { transition-delay: 0.06s; }
+[data-stagger] > .is-visible:nth-child(3) { transition-delay: 0.12s; }
+[data-stagger] > .is-visible:nth-child(4) { transition-delay: 0.18s; }
+[data-stagger] > .is-visible:nth-child(5) { transition-delay: 0.24s; }
+[data-stagger] > .is-visible:nth-child(6) { transition-delay: 0.30s; }
+[data-stagger] > .is-visible:nth-child(7) { transition-delay: 0.36s; }
+[data-stagger] > .is-visible:nth-child(8) { transition-delay: 0.42s; }
+[data-stagger] > .is-visible:nth-child(9) { transition-delay: 0.48s; }
+[data-stagger] > .is-visible:nth-child(10) { transition-delay: 0.54s; }
+[data-stagger] > .is-visible:nth-child(11) { transition-delay: 0.60s; }
+[data-stagger] > .is-visible:nth-child(12) { transition-delay: 0.66s; }
+[data-stagger] > .is-visible:nth-child(13) { transition-delay: 0.72s; }
+[data-stagger] > .is-visible:nth-child(14) { transition-delay: 0.78s; }
+[data-stagger] > .is-visible:nth-child(15) { transition-delay: 0.84s; }
+[data-stagger] > .is-visible:nth-child(16) { transition-delay: 0.90s; }
+[data-stagger] > .is-visible:nth-child(17) { transition-delay: 0.96s; }
+[data-stagger] > .is-visible:nth-child(18) { transition-delay: 1.02s; }
+[data-stagger] > .is-visible:nth-child(19) { transition-delay: 1.08s; }
+[data-stagger] > .is-visible:nth-child(20) { transition-delay: 1.14s; }
+[data-stagger] > .is-visible:nth-child(21) { transition-delay: 1.20s; }
+[data-stagger] > .is-visible:nth-child(22) { transition-delay: 1.26s; }
+[data-stagger] > .is-visible:nth-child(23) { transition-delay: 1.32s; }
+[data-stagger] > .is-visible:nth-child(24) { transition-delay: 1.38s; }
 
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
@@ -626,4 +642,51 @@ a:focus-visible {
   .hero-carousel__column {
     animation: none;
   }
+}
+
+/* --------------------------------------------
+   10. GLOBAL POLISH & ENHANCEMENTS
+   -------------------------------------------- */
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+  background: var(--color-primary-100);
+  color: var(--color-primary-900);
+}
+
+/* Decorative keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(27, 127, 94, 0.2); }
+  50% { box-shadow: 0 0 0 8px rgba(27, 127, 94, 0); }
+}
+
+/* Button micro-interactions */
+.btn {
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Improved focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }

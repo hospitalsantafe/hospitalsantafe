@@ -199,13 +199,13 @@
 
 /* WhatsApp card */
 .contacto-card--whatsapp {
-    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-    border-color: #bbf7d0;
+    background: linear-gradient(135deg, #edf7f3, #d6ece4);
+    border-color: #b8ddd0;
 }
 
 .contacto-card__icon--whatsapp {
-    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
-    color: #25d366;
+    background: linear-gradient(135deg, #d6ece4, #b8ddd0);
+    color: var(--color-primary-600);
 }
 
 /* ========================================

@@ -38,12 +38,12 @@
 }
 
 .cta-bar__btn--whatsapp {
-    background-color: #25d366;
+    background-color: var(--color-primary-600);
     color: var(--color-white);
 }
 
 .cta-bar__btn--whatsapp:hover {
-    background-color: #20ba5a;
+    background-color: var(--color-primary-700);
     color: var(--color-white);
 }
 

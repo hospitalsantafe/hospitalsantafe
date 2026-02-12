@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import EspecialidadesGrid from '@/components/servicios/EspecialidadesGrid';
 import { especialidades } from '@/lib/data/especialidades';
 import '../servicios.css';
 
@@ -29,25 +30,7 @@ export default function EspecialidadesPage() {
 
       <section className="section">
         <div className="container">
-          <ScrollReveal stagger className="especialidades-grid">
-            {especialidades.map((esp) => (
-              <Link key={esp.slug} href={`/servicios/especialidades/${esp.slug}`} className="especialidad-card" data-animate>
-                <div className="especialidad-icon">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                    <path d={esp.iconPath} />
-                  </svg>
-                </div>
-                <h3>{esp.nombre}</h3>
-                <p>{esp.descripcion}</p>
-                <span className="card-link-inline">
-                  Ver más
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </Link>
-            ))}
-          </ScrollReveal>
+          <EspecialidadesGrid especialidades={especialidades} />
         </div>
       </section>
 

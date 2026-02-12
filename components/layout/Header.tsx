@@ -1,14 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import SearchOverlay from '@/components/common/SearchOverlay';
 import './Header.css';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [serviciosDropdownOpen, setServiciosDropdownOpen] = useState(false);
   const [instalacionesDropdownOpen, setInstalacionesDropdownOpen] = useState(false);
 
@@ -23,29 +23,19 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close search on Escape key
+  // Keyboard shortcut: Ctrl/Cmd + K to open search
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsSearchOpen(false);
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
     };
-    if (isSearchOpen) {
-      document.addEventListener('keydown', handleKeyDown);
-    }
+    document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isSearchOpen]);
+  }, []);
 
-  const suggestions = [
-    { label: 'Urgencias', href: '/contacto' },
-    { label: 'Maternidad', href: '/servicios/paquetes' },
-    { label: 'Especialidades', href: '/servicios/especialidades' },
-    { label: 'Habitaciones', href: '/instalaciones/habitaciones' },
-    { label: 'Estudios de imagen', href: '/servicios/estudios-imagen' },
-    { label: 'Contacto', href: '/contacto' },
-  ];
-
-  const filteredSuggestions = searchQuery.trim()
-    ? suggestions.filter(s => s.label.toLowerCase().includes(searchQuery.toLowerCase()))
-    : suggestions;
+  const closeSearch = useCallback(() => setIsSearchOpen(false), []);
 
   return (
     <header className="header">
@@ -181,58 +171,7 @@ export default function Header() {
       </div>
 
       {/* ====== Search Overlay ====== */}
-      {isSearchOpen && (
-        <div className="search-overlay" onClick={() => setIsSearchOpen(false)}>
-          <div className="search-overlay__content" onClick={(e) => e.stopPropagation()}>
-            <div className="search-overlay__header">
-              <div className="search-overlay__input-wrap">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.35-4.35" />
-                </svg>
-                <input
-                  type="text"
-                  className="search-overlay__input"
-                  placeholder="¿Qué estás buscando?"
-                  autoFocus
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-              <button
-                className="search-overlay__close"
-                onClick={() => setIsSearchOpen(false)}
-                aria-label="Cerrar búsqueda"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M18 6L6 18M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            <div className="search-overlay__suggestions">
-              <p className="search-overlay__label">
-                {searchQuery.trim() ? 'Resultados' : 'Búsquedas populares'}
-              </p>
-              <div className="search-overlay__tags">
-                {filteredSuggestions.map((s) => (
-                  <Link
-                    key={s.label}
-                    href={s.href}
-                    className="search-tag"
-                    onClick={() => setIsSearchOpen(false)}
-                  >
-                    {s.label}
-                  </Link>
-                ))}
-                {filteredSuggestions.length === 0 && (
-                  <p className="search-overlay__empty">No se encontraron resultados.</p>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <SearchOverlay isOpen={isSearchOpen} onClose={closeSearch} />
 
       {/* Mobile Navigation */}
       <div className={`header__mobile-nav ${isMobileMenuOpen ? 'is-open' : ''}`}>

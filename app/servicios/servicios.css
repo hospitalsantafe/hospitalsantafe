@@ -35,12 +35,18 @@
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-md);
     text-align: center;
-    transition: transform 0.3s var(--ease-out);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    border-left: 3px solid transparent;
 }
 
 .especialidad-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(27, 127, 94, 0.12);
+    border-left-color: var(--color-primary-500);
+}
+
+.especialidad-card:hover .especialidad-icon {
+    animation: float 2s ease-in-out infinite;
 }
 
 .especialidad-icon {
@@ -74,6 +80,12 @@
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-md);
     border-left: 4px solid var(--color-primary-600);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.estudio-card:hover {
+    box-shadow: 0 12px 40px rgba(27, 127, 94, 0.10);
+    transform: translateY(-3px);
 }
 
 .estudio-card__header {
@@ -345,6 +357,32 @@
     background: var(--color-neutral-50);
     padding: calc(var(--space-16) + var(--header-height)) 0 var(--space-12);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(27, 127, 94, 0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(27, 127, 94, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .page-hero h1 {
@@ -414,13 +452,18 @@
     box-shadow: var(--shadow-md);
     border: 1px solid rgba(0, 0, 0, 0.06);
     text-decoration: none;
-    transition: all var(--transition-base);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .servicio-hub-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--color-primary-100);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(27, 127, 94, 0.15);
+    border-color: var(--color-primary-200);
+}
+
+.servicio-hub-card:hover .servicio-hub-card__icon {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(27, 127, 94, 0.2);
 }
 
 .servicio-hub-card__icon {
@@ -430,6 +473,7 @@
     align-items: center;
     justify-content: center;
     background: var(--color-primary-50);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     border-radius: var(--radius-lg);
     color: var(--color-primary-600);
     margin-bottom: var(--space-6);
@@ -663,12 +707,13 @@
     box-shadow: var(--shadow-md);
     border: 1px solid rgba(0, 0, 0, 0.06);
     position: relative;
-    transition: all var(--transition-base);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .paquete-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(27, 127, 94, 0.10);
+    transform: translateY(-4px);
+    border-color: var(--color-primary-100);
 }
 
 .paquete-card--destacado {
