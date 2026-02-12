@@ -826,3 +826,499 @@
         font-size: var(--text-xs);
     }
 }
+
+/* ========================================
+   Paquetes Quick Nav (pills horizontales)
+   ======================================== */
+
+.paquetes-quick-nav {
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-neutral-100);
+    padding: var(--space-4) 0;
+    position: sticky;
+    top: var(--header-height);
+    z-index: 10;
+}
+
+.paquetes-quick-nav__inner {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding-bottom: var(--space-1);
+    scrollbar-width: thin;
+}
+
+.paquetes-quick-nav__pill {
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-full);
+    background: var(--color-neutral-50);
+    color: var(--color-neutral-700);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+    border: 1px solid var(--color-neutral-200);
+}
+
+.paquetes-quick-nav__pill:hover {
+    background: var(--color-primary-50);
+    color: var(--color-primary-600);
+    border-color: var(--color-primary-300);
+}
+
+/* ========================================
+   Paquete Card Enhancements
+   ======================================== */
+
+.paquete-card__descripcion {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-600);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.paquete-card__indicaciones {
+    background: var(--color-primary-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.paquete-card__indicaciones h4 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-700);
+    margin-bottom: var(--space-2);
+}
+
+.paquete-card__indicaciones ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.paquete-card__indicaciones li {
+    font-size: var(--text-xs);
+    color: var(--color-primary-900);
+    padding: var(--space-1) 0;
+    padding-left: var(--space-4);
+    position: relative;
+}
+
+.paquete-card__indicaciones li::before {
+    content: "•";
+    position: absolute;
+    left: var(--space-1);
+    color: var(--color-primary-600);
+    font-weight: bold;
+}
+
+.paquete-card__incluye-title {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-900);
+    margin-bottom: var(--space-2);
+}
+
+/* Desglose de costos (artroscopia) */
+.paquete-card__desglose {
+    background: var(--color-neutral-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.paquete-card__desglose h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-900);
+    margin-bottom: var(--space-3);
+}
+
+.paquete-card__desglose table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.paquete-card__desglose td {
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    color: var(--color-neutral-700);
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.paquete-card__desglose .desglose-monto {
+    text-align: right;
+    font-weight: var(--font-semibold);
+    color: var(--color-primary-600);
+    white-space: nowrap;
+}
+
+.paquete-card__desglose .desglose-total td {
+    border-bottom: none;
+    padding-top: var(--space-3);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-900);
+    font-size: var(--text-base);
+}
+
+/* Maternidad link box */
+.paquete-maternidad-link {
+    background: linear-gradient(135deg, var(--color-primary-50), var(--color-white));
+    border: 2px solid var(--color-primary-100);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    margin-bottom: var(--space-8);
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+}
+
+.paquete-maternidad-link p {
+    flex: 1;
+    font-size: var(--text-base);
+    color: var(--color-neutral-700);
+    margin: 0;
+    min-width: 200px;
+}
+
+/* ========================================
+   Payment Banner
+   ======================================== */
+
+.payment-banner {
+    background: var(--color-neutral-50);
+}
+
+.payment-banner__content {
+    text-align: center;
+}
+
+.payment-banner__content h2 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-900);
+    margin-bottom: var(--space-2);
+}
+
+.payment-banner__content > p {
+    font-size: var(--text-base);
+    color: var(--color-neutral-700);
+    margin-bottom: var(--space-8);
+}
+
+.payment-banner__methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+    text-align: left;
+}
+
+.payment-method {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    background: var(--color-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.payment-method svg {
+    flex-shrink: 0;
+    color: var(--color-primary-600);
+}
+
+.payment-method strong {
+    display: block;
+    font-size: var(--text-base);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-900);
+    margin-bottom: var(--space-1);
+}
+
+.payment-method p {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-600);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ========================================
+   Estudio Card Enhancements
+   ======================================== */
+
+.estudio-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-600);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+}
+
+.estudio-card__indicaciones {
+    margin-bottom: var(--space-4);
+}
+
+.estudio-card__indicaciones h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-900);
+    margin-bottom: var(--space-2);
+}
+
+.estudio-card__indicaciones ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.estudio-card__indicaciones li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--color-neutral-700);
+    padding: var(--space-1) 0;
+}
+
+.estudio-card__indicaciones li svg {
+    flex-shrink: 0;
+    color: var(--color-primary-600);
+    margin-top: 1px;
+}
+
+.estudio-card__procedimiento {
+    background: var(--color-neutral-50);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+}
+
+.estudio-card__procedimiento h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-900);
+    margin-bottom: var(--space-2);
+}
+
+.estudio-card__procedimiento p {
+    font-size: var(--text-xs);
+    color: var(--color-neutral-600);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.estudio-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-neutral-200);
+    margin-top: auto;
+}
+
+/* ========================================
+   Estudio Tipos Grid (sub-tipos eco)
+   ======================================== */
+
+.estudio-tipos-section {
+    margin-bottom: var(--space-4);
+}
+
+.estudio-tipos-section h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-900);
+    margin-bottom: var(--space-3);
+}
+
+.estudio-tipos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-3);
+}
+
+.estudio-tipo-item {
+    background: var(--color-primary-50);
+    padding: var(--space-3);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--color-primary-300);
+}
+
+.estudio-tipo-item strong {
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-700);
+    margin-bottom: var(--space-1);
+}
+
+.estudio-tipo-item p {
+    font-size: 11px;
+    color: var(--color-neutral-600);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ========================================
+   Highlight Section (Eco 3D/4D special)
+   ======================================== */
+
+.highlight-section {
+    background: linear-gradient(135deg, var(--color-primary-50), #f0f9ff);
+}
+
+.highlight-section__content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.highlight-section__text h2 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-900);
+    margin-bottom: var(--space-4);
+}
+
+.highlight-section__text h2 svg {
+    color: var(--color-primary-600);
+    flex-shrink: 0;
+}
+
+.highlight-section__desc {
+    font-size: var(--text-base);
+    color: var(--color-neutral-700);
+    line-height: 1.8;
+    margin-bottom: var(--space-6);
+}
+
+.highlight-section__prices {
+    display: flex;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+}
+
+.highlight-price {
+    background: var(--color-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--color-neutral-200);
+}
+
+.highlight-price--promo {
+    border-color: var(--color-primary-300);
+    background: linear-gradient(135deg, var(--color-white), var(--color-primary-50));
+}
+
+.highlight-price__amount {
+    display: block;
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-600);
+    margin-bottom: var(--space-1);
+}
+
+.highlight-price__label {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-600);
+}
+
+.highlight-section__tips {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-6) 0;
+}
+
+.highlight-section__tips li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-neutral-700);
+    padding: var(--space-2) 0;
+}
+
+.highlight-section__tips li svg {
+    flex-shrink: 0;
+    color: var(--color-primary-600);
+    margin-top: 2px;
+}
+
+.highlight-section__prep,
+.highlight-section__delivery {
+    background: var(--color-white);
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+}
+
+.highlight-section__prep h4,
+.highlight-section__delivery h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-900);
+    margin-bottom: var(--space-2);
+}
+
+.highlight-section__prep p,
+.highlight-section__delivery p {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-600);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ========================================
+   Responsive additions
+   ======================================== */
+
+@media (max-width: 992px) {
+    .estudio-tipos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .highlight-section__prices {
+        flex-direction: column;
+    }
+
+    .paquete-maternidad-link {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .paquetes-quick-nav {
+        top: var(--header-height-mobile);
+    }
+
+    .estudio-tipos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-banner__methods {
+        grid-template-columns: 1fr;
+    }
+
+    .estudio-card__footer {
+        flex-direction: column;
+        gap: var(--space-3);
+        align-items: stretch;
+        text-align: center;
+    }
+}
