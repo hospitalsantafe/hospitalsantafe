@@ -1,5 +1,11 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import '../instalaciones.css';
+
+export const metadata: Metadata = {
+  title: 'Habitaciones',
+  description: 'Habitaciones privadas y cómodas en Hospital Santa Fe, Zapotlanejo. Espacios diseñados para tu recuperación con atención personalizada.',
+};
 
 export default function Habitaciones() {
     return (

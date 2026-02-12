@@ -11,26 +11,19 @@ export const mainNavigation: NavItem[] = [
     label: "Servicios Médicos",
     href: "/servicios",
     children: [
-      { label: "Todas las Especialidades", href: "/servicios/especialidades" },
+      { label: "Todos los servicios", href: "/servicios" },
+      { label: "Especialidades", href: "/servicios/especialidades" },
+      { label: "Paquetes Quirúrgicos", href: "/servicios/paquetes" },
       { label: "Estudios de Imagen", href: "/servicios/estudios-imagen" },
       { label: "Cuneros", href: "/servicios/cuneros" },
-    ]
-  },
-  {
-    label: "Paquetes",
-    href: "/servicios/paquetes",
-    children: [
       { label: "Maternidad", href: "/maternidad" },
-      { label: "Artroscopía", href: "/servicios/paquetes#artroscopia" },
-      { label: "Cirugía Bariátrica", href: "/servicios/paquetes#bariatrica" },
-      { label: "Cirugía Plástica", href: "/servicios/paquetes#cirugia-plastica" },
-      { label: "Paquetes Quirúrgicos", href: "/servicios/paquetes#quirurgicos" },
     ]
   },
   {
     label: "Instalaciones",
     href: "/instalaciones",
     children: [
+      { label: "Todas las instalaciones", href: "/instalaciones" },
       { label: "Habitaciones", href: "/instalaciones/habitaciones" },
       { label: "Farmacia", href: "/instalaciones/farmacia" },
       { label: "Cafetería", href: "/instalaciones/cafeteria" },
@@ -42,10 +35,12 @@ export const mainNavigation: NavItem[] = [
 
 export const WHATSAPP_NUMBER = "523331198625";
 export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
-export const PHONE_NUMBER = "3331198625";
-export const PHONE_DISPLAY = "333-119-8625";
-export const PHONE_LANDLINE = "7344205";
-export const PHONE_LANDLINE_DISPLAY = "73-44205";
+export const PHONE_WHATSAPP = "3331198625";
+export const PHONE_WHATSAPP_DISPLAY = "333-119-8625";
+export const PHONE_LANDLINE = "3737344205";
+export const PHONE_LANDLINE_DISPLAY = "373-734-4205";
+export const PHONE_MOBILE = "3731065183";
+export const PHONE_MOBILE_DISPLAY = "373-106-5183";
 
 export const HOSPITAL_ADDRESS = {
   street: "Calle Galeana No.22",

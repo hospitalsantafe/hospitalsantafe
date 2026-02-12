@@ -2,6 +2,11 @@
    HOME PAGE - REFERENCE DESIGN STYLE
    ======================================== */
 
+/* Section CTA Spacer - replaces inline marginTop */
+.section-cta-spacer {
+    margin-top: var(--space-12);
+}
+
 /* Hero Wave Section */
 .hero-wave {
     position: relative;

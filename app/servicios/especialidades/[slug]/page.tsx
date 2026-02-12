@@ -13,7 +13,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   if (!especialidad) return { title: 'Especialidad no encontrada' };
 
   return {
-    title: `${especialidad.nombre} | Hospital Santa Fe`,
+    title: especialidad.nombre,
     description: especialidad.descripcion,
   };
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { searchAll, popularSearches, type SearchItem, type SearchCategory } from '@/lib/data/search-index';
 import './SearchOverlay.css';
@@ -27,6 +28,7 @@ interface SearchOverlayProps {
 }
 
 export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
+  const router = useRouter();
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchItem[]>([]);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -77,7 +79,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
       } else if (e.key === 'Enter' && activeIndex >= 0 && results[activeIndex]) {
         e.preventDefault();
         onClose();
-        window.location.href = results[activeIndex].href;
+        router.push(results[activeIndex].href);
       }
     },
     [results, activeIndex, onClose]

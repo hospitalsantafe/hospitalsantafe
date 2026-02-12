@@ -7,8 +7,30 @@
     transition: box-shadow var(--transition-base);
 }
 
-.header.scrolled {
+.header--scrolled {
     box-shadow: var(--shadow-md);
+}
+
+/* Skip to content link - accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary-600);
+    color: var(--color-white);
+    padding: var(--space-3) var(--space-6);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    z-index: 9999;
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+    top: 0;
+    color: var(--color-white);
+    outline: none;
 }
 
 .header__container {

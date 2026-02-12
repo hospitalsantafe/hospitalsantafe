@@ -1,10 +1,22 @@
 import Link from 'next/link';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import {
+  PHONE_LANDLINE,
+  PHONE_LANDLINE_DISPLAY,
+  PHONE_MOBILE,
+  PHONE_MOBILE_DISPLAY,
+  PHONE_WHATSAPP,
+  PHONE_WHATSAPP_DISPLAY,
+  getWhatsAppUrl,
+  HOSPITAL_ADDRESS,
+  GOOGLE_MAPS_LINK,
+  GOOGLE_MAPS_EMBED_URL,
+} from '@/lib/data/navigation';
 import './contacto.css';
 
 export const metadata = {
-  title: 'Contacto | Hospital Santa Fe',
-  description: 'Contáctanos en Hospital Santa Fe, Zapotlanejo. Teléfono 73-44205, WhatsApp 333-119-8625. Calle Galeana No.22, Santa Fe. Urgencias 24/7.',
+  title: 'Contacto',
+  description: `Contáctanos en Hospital Santa Fe, Zapotlanejo. Teléfono ${PHONE_LANDLINE_DISPLAY}, ${PHONE_MOBILE_DISPLAY}. WhatsApp ${PHONE_WHATSAPP_DISPLAY}. ${HOSPITAL_ADDRESS.full}. Urgencias 24/7.`,
 };
 
 export default function Contacto() {
@@ -67,15 +79,19 @@ export default function Contacto() {
               <div className="contacto-card__phones">
                 <div className="phone-item">
                   <span className="phone-label">Conmutador</span>
-                  <a href="tel:7344205" className="phone-number">73-44205</a>
+                  <a href={`tel:${PHONE_LANDLINE}`} className="phone-number">{PHONE_LANDLINE_DISPLAY}</a>
                 </div>
                 <div className="phone-item">
-                  <span className="phone-label">Celular / WhatsApp</span>
-                  <a href="tel:3331198625" className="phone-number">333-119-8625</a>
+                  <span className="phone-label">Celular</span>
+                  <a href={`tel:${PHONE_MOBILE}`} className="phone-number">{PHONE_MOBILE_DISPLAY}</a>
+                </div>
+                <div className="phone-item">
+                  <span className="phone-label">WhatsApp</span>
+                  <a href={`tel:${PHONE_WHATSAPP}`} className="phone-number">{PHONE_WHATSAPP_DISPLAY}</a>
                 </div>
                 <div className="phone-item phone-item--urgencias">
                   <span className="phone-label">Urgencias 24/7</span>
-                  <a href="tel:7344205" className="phone-number">73-44205</a>
+                  <a href={`tel:${PHONE_LANDLINE}`} className="phone-number">{PHONE_LANDLINE_DISPLAY}</a>
                 </div>
               </div>
             </div>
@@ -117,7 +133,7 @@ export default function Contacto() {
                 Escríbenos directamente para agendar citas, pedir informes o resolver cualquier duda.
               </p>
               <a
-                href="https://wa.me/523331198625?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n"
+                href={getWhatsAppUrl('Hola, me gustaría obtener información')}
                 className="btn btn--whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -132,7 +148,7 @@ export default function Contacto() {
       </section>
 
       {/* Mapa */}
-      <section className="contacto-mapa">
+      <section className="contacto-mapa" id="mapa">
         <div className="container">
           <ScrollReveal>
           <h2 className="contacto-mapa__title" data-animate>Encuéntranos</h2>

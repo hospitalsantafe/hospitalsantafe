@@ -5,7 +5,7 @@ import { especialidades } from '@/lib/data/especialidades';
 import '../servicios.css';
 
 export const metadata = {
-  title: 'Especialidades Médicas | Hospital Santa Fe',
+  title: 'Especialidades Médicas',
   description: 'Más de 23 especialidades médicas en Hospital Santa Fe. Medicina general, ginecología, pediatría, cardiología, traumatología y más en Zapotlanejo, Jalisco.',
 };
 

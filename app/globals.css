@@ -370,11 +370,6 @@ strong {
   color: var(--color-white);
 }
 
-.btn--large {
-  padding: var(--space-4) var(--space-8);
-  font-size: var(--text-lg);
-}
-
 /* --- Cards --- */
 .card {
   background-color: var(--color-white);
@@ -647,11 +642,6 @@ a:focus-visible {
 /* --------------------------------------------
    10. GLOBAL POLISH & ENHANCEMENTS
    -------------------------------------------- */
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
 
 /* Custom selection color */
 ::selection {

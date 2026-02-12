@@ -73,7 +73,7 @@ const jsonLd = {
   description:
     "Hospital privado con más de 20 años de experiencia brindando atención médica de calidad en Zapotlanejo, Jalisco. Urgencias 24/7, 23+ especialidades médicas.",
   url: "https://hospitalsantafe.com",
-  telephone: "+52-33-3119-8625",
+  telephone: ["+52-373-734-4205", "+52-373-106-5183", "+52-333-119-8625"],
   address: {
     "@type": "PostalAddress",
     streetAddress: "Calle Galeana No.22",
@@ -155,7 +155,7 @@ export default function RootLayout({
       </head>
       <body className={`${montserrat.variable} ${openSans.variable}`}>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
         <CTABar />
         <WhatsAppButton />

@@ -1,5 +1,11 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import '../instalaciones.css';
+
+export const metadata: Metadata = {
+  title: 'Farmacia',
+  description: 'Farmacia de Hospital Santa Fe en Zapotlanejo. Medicamentos disponibles las 24 horas para pacientes hospitalizados y público en general.',
+};
 
 export default function Farmacia() {
     return (

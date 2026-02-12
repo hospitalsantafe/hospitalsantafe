@@ -2,7 +2,7 @@ import Link from 'next/link';
 import '../servicios.css';
 
 export const metadata = {
-  title: 'Cuneros y Neonatología | Hospital Santa Fe',
+  title: 'Cuneros y Neonatología',
   description: 'Cunero con atención especializada las 24 horas, enfermeras neonatólogas, monitoreo continuo, tamiz neonatal y más en Hospital Santa Fe, Zapotlanejo.',
 };
 

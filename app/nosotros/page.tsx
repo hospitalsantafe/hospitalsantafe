@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import type { Metadata } from 'next';
 import './nosotros.css';
+
+export const metadata: Metadata = {
+  title: 'Quiénes Somos',
+  description: 'Conoce la historia de Hospital Santa Fe. Más de 20 años brindando atención médica de calidad en Zapotlanejo, Jalisco. Nuestro equipo, misión y valores.',
+};
 
 export default function Nosotros() {
     return (

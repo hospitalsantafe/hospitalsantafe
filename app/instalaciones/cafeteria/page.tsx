@@ -1,5 +1,11 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import '../instalaciones.css';
+
+export const metadata: Metadata = {
+  title: 'Cafetería',
+  description: 'Cafetería de Hospital Santa Fe en Zapotlanejo. Alimentos y bebidas para pacientes, familiares y visitantes en un espacio cómodo.',
+};
 
 export default function Cafeteria() {
     return (

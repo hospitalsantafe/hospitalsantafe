@@ -3,7 +3,7 @@ import ScrollReveal from '@/components/common/ScrollReveal';
 import './servicios.css';
 
 export const metadata = {
-  title: 'Servicios Médicos | Hospital Santa Fe',
+  title: 'Servicios Médicos',
   description: 'Conoce todos nuestros servicios médicos: 23 especialidades, paquetes quirúrgicos, estudios de imagen y cuneros. Atención de calidad en Zapotlanejo, Jalisco.',
 };
 

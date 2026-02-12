@@ -3,7 +3,7 @@ import ScrollReveal from '@/components/common/ScrollReveal';
 import './instalaciones.css';
 
 export const metadata = {
-  title: 'Instalaciones | Hospital Santa Fe',
+  title: 'Instalaciones',
   description: 'Conoce nuestras instalaciones: habitaciones privadas y compartidas, farmacia, cafetería y galería fotográfica. Hospital moderno en Zapotlanejo, Jalisco.',
 };
 

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect, useCallback } from 'react';
+import { PHONE_LANDLINE, PHONE_LANDLINE_DISPLAY } from '@/lib/data/navigation';
 import SearchOverlay from '@/components/common/SearchOverlay';
 import './Header.css';
 
@@ -14,7 +15,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 500);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -35,13 +36,24 @@ export default function Header() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Close mobile menu on route change (body scroll lock)
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobileMenuOpen]);
+
   const closeSearch = useCallback(() => setIsSearchOpen(false), []);
+  const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
 
   return (
-    <header className="header">
+    <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <div className="header__container container">
         {/* Logo - Always visible */}
-        <Link href="/" className="header__logo">
+        <Link href="/" className="header__logo" onClick={closeMobileMenu}>
           <div className="logo">
             <div className="logo__image">
               <img src="/images/ultimologo.svg" alt="Hospital Santa Fe" width="180" height="60" style={{ objectFit: 'contain' }} />
@@ -65,31 +77,41 @@ export default function Header() {
             onMouseEnter={() => setServiciosDropdownOpen(true)}
             onMouseLeave={() => setServiciosDropdownOpen(false)}
           >
-            <button className="nav__link--dropdown">
+            <button
+              className="nav__link--dropdown"
+              aria-haspopup="true"
+              aria-expanded={serviciosDropdownOpen}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setServiciosDropdownOpen(!serviciosDropdownOpen);
+                }
+              }}
+            >
               Servicios médicos
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </button>
 
             {serviciosDropdownOpen && (
-              <div className="nav__dropdown-menu">
-                <Link href="/servicios" className="dropdown__link dropdown__link--highlight">
+              <div className="nav__dropdown-menu" role="menu">
+                <Link href="/servicios" className="dropdown__link dropdown__link--highlight" role="menuitem">
                   Todos los servicios
                 </Link>
-                <Link href="/servicios/especialidades" className="dropdown__link">
+                <Link href="/servicios/especialidades" className="dropdown__link" role="menuitem">
                   Especialidades
                 </Link>
-                <Link href="/servicios/paquetes" className="dropdown__link">
+                <Link href="/servicios/paquetes" className="dropdown__link" role="menuitem">
                   Paquetes Quirúrgicos
                 </Link>
-                <Link href="/servicios/estudios-imagen" className="dropdown__link">
+                <Link href="/servicios/estudios-imagen" className="dropdown__link" role="menuitem">
                   Estudios de imagen
                 </Link>
-                <Link href="/servicios/cuneros" className="dropdown__link">
+                <Link href="/servicios/cuneros" className="dropdown__link" role="menuitem">
                   Cuneros
                 </Link>
-                <Link href="/maternidad" className="dropdown__link">
+                <Link href="/maternidad" className="dropdown__link" role="menuitem">
                   Maternidad
                 </Link>
               </div>
@@ -102,28 +124,38 @@ export default function Header() {
             onMouseEnter={() => setInstalacionesDropdownOpen(true)}
             onMouseLeave={() => setInstalacionesDropdownOpen(false)}
           >
-            <button className="nav__link--dropdown">
+            <button
+              className="nav__link--dropdown"
+              aria-haspopup="true"
+              aria-expanded={instalacionesDropdownOpen}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setInstalacionesDropdownOpen(!instalacionesDropdownOpen);
+                }
+              }}
+            >
               Instalaciones
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </button>
 
             {instalacionesDropdownOpen && (
-              <div className="nav__dropdown-menu">
-                <Link href="/instalaciones" className="dropdown__link dropdown__link--highlight">
+              <div className="nav__dropdown-menu" role="menu">
+                <Link href="/instalaciones" className="dropdown__link dropdown__link--highlight" role="menuitem">
                   Todas las instalaciones
                 </Link>
-                <Link href="/instalaciones/habitaciones" className="dropdown__link">
+                <Link href="/instalaciones/habitaciones" className="dropdown__link" role="menuitem">
                   Habitaciones
                 </Link>
-                <Link href="/instalaciones/farmacia" className="dropdown__link">
+                <Link href="/instalaciones/farmacia" className="dropdown__link" role="menuitem">
                   Farmacia
                 </Link>
-                <Link href="/instalaciones/cafeteria" className="dropdown__link">
+                <Link href="/instalaciones/cafeteria" className="dropdown__link" role="menuitem">
                   Cafetería
                 </Link>
-                <Link href="/instalaciones/galeria" className="dropdown__link">
+                <Link href="/instalaciones/galeria" className="dropdown__link" role="menuitem">
                   Galería
                 </Link>
               </div>
@@ -139,18 +171,18 @@ export default function Header() {
         <div className="header__actions">
           <button
             className="header__search"
-            aria-label="Buscar"
+            aria-label="Buscar (Ctrl+K)"
             type="button"
             onClick={() => setIsSearchOpen(true)}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.35-4.35" />
             </svg>
           </button>
 
-          <a href="tel:7344205" className="btn btn--urgencias header__cta">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <a href={`tel:${PHONE_LANDLINE}`} className="btn btn--urgencias header__cta">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
             <span>Urgencias 24/7</span>
@@ -160,7 +192,8 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           className={`header__menu-btn ${isMobileMenuOpen ? 'is-active' : ''}`}
-          aria-label="Toggle menu"
+          aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={isMobileMenuOpen}
           type="button"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -176,11 +209,11 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className={`header__mobile-nav ${isMobileMenuOpen ? 'is-open' : ''}`}>
         <nav aria-label="Navegación Móvil">
-          <Link href="/" className="mobile-nav__link">
+          <Link href="/" className="mobile-nav__link" onClick={closeMobileMenu}>
             Inicio
           </Link>
 
-          <Link href="/nosotros" className="mobile-nav__link">
+          <Link href="/nosotros" className="mobile-nav__link" onClick={closeMobileMenu}>
             Nosotros
           </Link>
 
@@ -188,6 +221,7 @@ export default function Header() {
           <div className="mobile-nav__section">
             <button
               className="mobile-nav__link--expandable"
+              aria-expanded={serviciosDropdownOpen}
               onClick={() => setServiciosDropdownOpen(!serviciosDropdownOpen)}
             >
               Servicios médicos
@@ -199,6 +233,7 @@ export default function Header() {
                 stroke="currentColor"
                 strokeWidth="2"
                 className={serviciosDropdownOpen ? 'rotate' : ''}
+                aria-hidden="true"
               >
                 <polyline points="6 9 12 15 18 9" />
               </svg>
@@ -206,22 +241,22 @@ export default function Header() {
 
             {serviciosDropdownOpen && (
               <div className="mobile-nav__submenu">
-                <Link href="/servicios" className="mobile-nav__sublink">
+                <Link href="/servicios" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Todos los servicios
                 </Link>
-                <Link href="/servicios/especialidades" className="mobile-nav__sublink">
+                <Link href="/servicios/especialidades" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Especialidades
                 </Link>
-                <Link href="/servicios/paquetes" className="mobile-nav__sublink">
+                <Link href="/servicios/paquetes" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Paquetes Quirúrgicos
                 </Link>
-                <Link href="/servicios/estudios-imagen" className="mobile-nav__sublink">
+                <Link href="/servicios/estudios-imagen" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Estudios de imagen
                 </Link>
-                <Link href="/servicios/cuneros" className="mobile-nav__sublink">
+                <Link href="/servicios/cuneros" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Cuneros
                 </Link>
-                <Link href="/maternidad" className="mobile-nav__sublink">
+                <Link href="/maternidad" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Maternidad
                 </Link>
               </div>
@@ -232,6 +267,7 @@ export default function Header() {
           <div className="mobile-nav__section">
             <button
               className="mobile-nav__link--expandable"
+              aria-expanded={instalacionesDropdownOpen}
               onClick={() => setInstalacionesDropdownOpen(!instalacionesDropdownOpen)}
             >
               Instalaciones
@@ -243,6 +279,7 @@ export default function Header() {
                 stroke="currentColor"
                 strokeWidth="2"
                 className={instalacionesDropdownOpen ? 'rotate' : ''}
+                aria-hidden="true"
               >
                 <polyline points="6 9 12 15 18 9" />
               </svg>
@@ -250,36 +287,36 @@ export default function Header() {
 
             {instalacionesDropdownOpen && (
               <div className="mobile-nav__submenu">
-                <Link href="/instalaciones" className="mobile-nav__sublink">
+                <Link href="/instalaciones" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Todas las instalaciones
                 </Link>
-                <Link href="/instalaciones/habitaciones" className="mobile-nav__sublink">
+                <Link href="/instalaciones/habitaciones" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Habitaciones
                 </Link>
-                <Link href="/instalaciones/farmacia" className="mobile-nav__sublink">
+                <Link href="/instalaciones/farmacia" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Farmacia
                 </Link>
-                <Link href="/instalaciones/cafeteria" className="mobile-nav__sublink">
+                <Link href="/instalaciones/cafeteria" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Cafetería
                 </Link>
-                <Link href="/instalaciones/galeria" className="mobile-nav__sublink">
+                <Link href="/instalaciones/galeria" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Galería
                 </Link>
               </div>
             )}
           </div>
 
-          <Link href="/contacto" className="mobile-nav__link">
+          <Link href="/contacto" className="mobile-nav__link" onClick={closeMobileMenu}>
             Contacto
           </Link>
 
           <div className="mobile-nav__cta">
-            <button className="btn btn--urgencias btn--large">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <a href={`tel:${PHONE_LANDLINE}`} className="btn btn--urgencias btn--large">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
-              Urgencias 24/7
-            </button>
+              Urgencias: {PHONE_LANDLINE_DISPLAY}
+            </a>
           </div>
         </nav>
       </div>

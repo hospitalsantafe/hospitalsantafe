@@ -2,7 +2,7 @@ import Link from 'next/link';
 import '../servicios/servicios.css';
 
 export const metadata = {
-  title: 'Aviso de Privacidad | Hospital Santa Fe',
+  title: 'Aviso de Privacidad',
   description: 'Aviso de privacidad del Hospital Santa Fe. Conoce cómo protegemos tus datos personales.',
 };
 

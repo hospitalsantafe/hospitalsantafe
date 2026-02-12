@@ -1,4 +1,13 @@
 import Link from 'next/link';
+import {
+    PHONE_LANDLINE,
+    PHONE_LANDLINE_DISPLAY,
+    PHONE_MOBILE,
+    PHONE_MOBILE_DISPLAY,
+    PHONE_WHATSAPP,
+    PHONE_WHATSAPP_DISPLAY,
+    HOSPITAL_ADDRESS,
+} from '@/lib/data/navigation';
 import './Footer.css';
 
 export default function Footer() {
@@ -52,26 +61,27 @@ export default function Footer() {
                         <h3 className="footer__title">Contacto</h3>
                         <ul className="footer__contact">
                             <li>
-                                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                                 </svg>
                                 <div>
-                                    <a href="tel:7344205">73-44205</a>
-                                    <a href="tel:3331198625">333-119-8625</a>
+                                    <a href={`tel:${PHONE_LANDLINE}`}>{PHONE_LANDLINE_DISPLAY}</a>
+                                    <a href={`tel:${PHONE_MOBILE}`}>{PHONE_MOBILE_DISPLAY}</a>
+                                    <a href={`tel:${PHONE_WHATSAPP}`}>{PHONE_WHATSAPP_DISPLAY} (WhatsApp)</a>
                                 </div>
                             </li>
                             <li>
-                                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                                     <circle cx="12" cy="10" r="3" />
                                 </svg>
                                 <div>
-                                    Calle Galeana No.22<br />
-                                    Santa Fe, Zapotlanejo, Jalisco
+                                    {HOSPITAL_ADDRESS.street}<br />
+                                    {HOSPITAL_ADDRESS.colony}, {HOSPITAL_ADDRESS.city}, {HOSPITAL_ADDRESS.state}
                                 </div>
                             </li>
                             <li>
-                                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
                                     <circle cx="12" cy="12" r="10" />
                                     <polyline points="12 6 12 12 16 14" />
                                 </svg>

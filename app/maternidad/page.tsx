@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import './page.css';
 
 export const metadata: Metadata = {
-    title: 'Paquetes de Maternidad | Hospital Santa Fe',
+    title: 'Paquetes de Maternidad',
     description: 'Paquetes de maternidad desde $11,000. Consultas prenatales, ecosonogramas 3D/4D, atención por especialistas. Apartado desde $500 pesos.',
 };
 
