@@ -1,0 +1,615 @@
+/* =============================================
+   Hospital Santa Fe — Panel de Administración
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.admin-root {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f4f6f9;
+  min-height: 100vh;
+  color: #1a2a1a;
+}
+
+/* ── Top Bar ── */
+.admin-topbar {
+  background: #1b5e20;
+  color: white;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+.admin-topbar__logo {
+  height: 36px;
+  width: auto;
+  background: white;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+.admin-topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-topbar__back {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.admin-topbar__back:hover {
+  color: white;
+}
+
+.admin-btn-logout {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.admin-btn-logout:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ── Page Wrapper ── */
+.admin-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+}
+
+/* ── Login ── */
+.admin-login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8f5e9 0%, #f4f6f9 100%);
+  padding: 24px;
+}
+
+.admin-login-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.admin-login-card img {
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.admin-login-card h1 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1b5e20;
+  margin: 0 0 4px;
+}
+
+.admin-login-card h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  margin: 0 0 32px;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-login-form input[type="password"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.admin-login-form input[type="password"]:focus {
+  border-color: #2e7d32;
+}
+
+.admin-login-form input[type="password"]::placeholder {
+  letter-spacing: 0;
+  color: #aaa;
+}
+
+.admin-btn-primary {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.admin-btn-primary:hover {
+  background: #1b5e20;
+}
+
+.admin-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.admin-btn-primary:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.admin-error-msg {
+  background: #fdecea;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ── Dashboard ── */
+.admin-dashboard-header {
+  margin-bottom: 32px;
+}
+
+.admin-dashboard-header h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1b5e20;
+  margin: 0 0 4px;
+}
+
+.admin-dashboard-header p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.admin-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.admin-nav-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border: 2px solid transparent;
+  padding: 24px 20px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.admin-nav-card:hover {
+  border-color: #2e7d32;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46,125,50,0.15);
+}
+
+.admin-nav-card__icon {
+  width: 52px;
+  height: 52px;
+  background: #e8f5e9;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2e7d32;
+}
+
+.admin-nav-card__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a2a1a;
+}
+
+.admin-nav-card__desc {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* ── Section Page Header ── */
+.admin-section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.admin-section-header a {
+  color: #666;
+  text-decoration: none;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.admin-section-header a:hover {
+  color: #1b5e20;
+}
+
+.admin-section-header h1 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1b5e20;
+  margin: 0;
+}
+
+/* ── Card ── */
+.admin-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.admin-card h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a2a1a;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* ── Testimonios List ── */
+.admin-testimonial-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-testimonial-item:last-child {
+  border-bottom: none;
+}
+
+.admin-testimonial-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-testimonial-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a2a1a;
+}
+
+.admin-testimonial-service {
+  font-size: 12px;
+  color: #2e7d32;
+  font-weight: 600;
+  margin: 2px 0;
+}
+
+.admin-testimonial-text {
+  font-size: 13px;
+  color: #555;
+  margin: 4px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+.admin-stars {
+  display: flex;
+  gap: 2px;
+  color: #f9a825;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.admin-testimonial-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.admin-btn-edit {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.admin-btn-edit:hover {
+  background: #bbdefb;
+}
+
+.admin-btn-delete {
+  background: #fdecea;
+  color: #c62828;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.admin-btn-delete:hover {
+  background: #ffcdd2;
+}
+
+/* ── Form ── */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.admin-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+.admin-form-group input,
+.admin-form-group textarea,
+.admin-form-group select {
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  color: #1a2a1a;
+  background: white;
+  resize: vertical;
+}
+
+.admin-form-group input:focus,
+.admin-form-group textarea:focus,
+.admin-form-group select:focus {
+  border-color: #2e7d32;
+}
+
+.admin-form-group textarea {
+  min-height: 80px;
+}
+
+.admin-form-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.admin-btn-secondary {
+  background: #f5f5f5;
+  color: #444;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.admin-btn-secondary:hover {
+  background: #eee;
+}
+
+.admin-btn-add {
+  background: #e8f5e9;
+  color: #1b5e20;
+  border: 2px dashed #a5d6a7;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: center;
+}
+
+.admin-btn-add:hover {
+  background: #c8e6c9;
+  border-color: #66bb6a;
+}
+
+/* ── Status Messages ── */
+.admin-status {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.admin-status--success {
+  background: #e8f5e9;
+  color: #1b5e20;
+  border: 1px solid #a5d6a7;
+}
+
+.admin-status--error {
+  background: #fdecea;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.admin-status--saving {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #90caf9;
+}
+
+/* ── Save Bar ── */
+.admin-save-bar {
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: sticky;
+  bottom: 0;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+  flex-wrap: wrap;
+}
+
+.admin-save-bar__hint {
+  font-size: 12px;
+  color: #888;
+}
+
+.admin-save-bar__hint strong {
+  color: #444;
+}
+
+/* ── Precios Form ── */
+.admin-price-input-wrap {
+  position: relative;
+}
+
+.admin-price-input-wrap span {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.admin-price-input-wrap input {
+  padding-left: 28px !important;
+}
+
+/* ── Info note ── */
+.admin-info-note {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #5d4037;
+  margin-bottom: 20px;
+}
+
+.admin-info-note strong {
+  color: #e65100;
+}
+
+/* ── Divider ── */
+.admin-divider {
+  border: none;
+  border-top: 2px solid #f0f0f0;
+  margin: 20px 0;
+}
+
+/* ── Empty state ── */
+.admin-empty {
+  text-align: center;
+  padding: 32px;
+  color: #888;
+  font-size: 14px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .admin-page {
+    padding: 20px 16px 80px;
+  }
+
+  .admin-login-card {
+    padding: 32px 24px;
+  }
+
+  .admin-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-topbar__brand span {
+    display: none;
+  }
+
+  .admin-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

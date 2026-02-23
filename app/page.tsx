@@ -1,7 +1,14 @@
 import ScrollReveal from '@/components/common/ScrollReveal';
 import Link from 'next/link';
 import { getWhatsAppUrl, PHONE_LANDLINE, PHONE_LANDLINE_DISPLAY } from '@/lib/data/navigation';
+import testimoniosJson from '@/lib/data/testimonios.json';
 import './page.css';
+
+const STAR_SVG = (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+  </svg>
+);
 
 export default function Home() {
   return (
@@ -476,65 +483,24 @@ export default function Home() {
           </ScrollReveal>
 
           <ScrollReveal stagger className="testimonials-grid">
-            <div className="testimonial-card" data-animate>
-              <div className="testimonial-card__quote">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.563 6.068 6 8.789 6 11h4v10H0z" /></svg>
-              </div>
-              <p className="testimonial-card__text">
-                &quot;Desde mi primer embarazo eleg&iacute; Hospital Santa Fe y no me arrepiento. La atenci&oacute;n fue
-                incre&iacute;blemente c&aacute;lida y profesional. Me sent&iacute; segura en todo momento.&quot;
-              </p>
-              <div className="testimonial-card__author">
-                <span className="testimonial-card__name">Mar&iacute;a G.</span>
-                <div className="testimonial-card__stars">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+            {testimoniosJson.slice(0, 3).map((t) => (
+              <div key={t.id} className="testimonial-card" data-animate>
+                <div className="testimonial-card__quote">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.563 6.068 6 8.789 6 11h4v10H0z" />
+                  </svg>
+                </div>
+                <p className="testimonial-card__text">&ldquo;{t.texto}&rdquo;</p>
+                <div className="testimonial-card__author">
+                  <span className="testimonial-card__name">{t.nombre}</span>
+                  <div className="testimonial-card__stars">
+                    {Array.from({ length: t.estrellas }).map((_, i) => (
+                      <span key={i}>{STAR_SVG}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="testimonial-card" data-animate>
-              <div className="testimonial-card__quote">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.563 6.068 6 8.789 6 11h4v10H0z" /></svg>
-              </div>
-              <p className="testimonial-card__text">
-                &quot;Llegu&eacute; a urgencias a las 3 de la ma&ntilde;ana y me atendieron de inmediato.
-                El trato fue excelente y el seguimiento muy profesional. Totalmente recomendado.&quot;
-              </p>
-              <div className="testimonial-card__author">
-                <span className="testimonial-card__name">Roberto L.</span>
-                <div className="testimonial-card__stars">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                </div>
-              </div>
-            </div>
-
-            <div className="testimonial-card" data-animate>
-              <div className="testimonial-card__quote">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.563 6.068 6 8.789 6 11h4v10H0z" /></svg>
-              </div>
-              <p className="testimonial-card__text">
-                &quot;Lo que m&aacute;s valoro es la atenci&oacute;n personalizada. No eres un n&uacute;mero m&aacute;s,
-                realmente se preocupan por ti y tu familia. Un hospital con vocaci&oacute;n de servicio.&quot;
-              </p>
-              <div className="testimonial-card__author">
-                <span className="testimonial-card__name">Ana P.</span>
-                <div className="testimonial-card__stars">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                </div>
-              </div>
-            </div>
+            ))}
           </ScrollReveal>
         </div>
       </section>

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "nombre": "María González R.",
+    "texto": "Mi experiencia en el parto fue increíble. Desde la primera consulta prenatal hasta el día del nacimiento de mi bebé, el equipo del Hospital Santa Fe me hizo sentir segura y acompañada. La habitación privada fue muy cómoda y las enfermeras estuvieron siempre atentas.",
+    "servicio": "Maternidad",
+    "estrellas": 5
+  },
+  {
+    "id": "2",
+    "nombre": "Roberto Hernández L.",
+    "texto": "Llegué a urgencias a las 3 de la mañana con un dolor fuerte. Me atendieron de inmediato, me hicieron los estudios necesarios y en pocas horas ya tenía diagnóstico y tratamiento. La atención fue rápida, profesional y muy humana. Totalmente recomendado.",
+    "servicio": "Urgencias",
+    "estrellas": 5
+  },
+  {
+    "id": "3",
+    "nombre": "Laura Martínez P.",
+    "texto": "Llevo años atendiéndome en Hospital Santa Fe y siempre me han tratado como familia. Los doctores se toman el tiempo de explicar todo con calma y el personal es muy amable. Es el único hospital en Zapotlanejo donde me siento realmente en buenas manos.",
+    "servicio": "Atención General",
+    "estrellas": 5
+  },
+  {
+    "id": "4",
+    "nombre": "Carlos Ramírez D.",
+    "texto": "Me operaron de vesícula por laparoscopía y todo salió excelente. El cirujano fue muy profesional y me explicó todo el procedimiento antes de la cirugía. La recuperación fue rápida y sin complicaciones. El precio del paquete fue justo y transparente.",
+    "servicio": "Cirugía General",
+    "estrellas": 5
+  },
+  {
+    "id": "5",
+    "nombre": "Ana Sofía Delgado V.",
+    "texto": "Tuve a mis dos hijos en Hospital Santa Fe y las dos experiencias fueron maravillosas. El paquete de cesárea incluye todo lo necesario, las instalaciones son limpias y modernas, y el trato del personal es excepcional. Sin duda, mi hospital de confianza.",
+    "servicio": "Maternidad",
+    "estrellas": 5
+  },
+  {
+    "id": "6",
+    "nombre": "Jorge Mendoza F.",
+    "texto": "Mi mamá estuvo hospitalizada varios días por una neumonía y la atención fue de primera. Los doctores pasaban a revisarla constantemente, las enfermeras siempre estuvieron al pendiente y la cafetería nos facilitó la estancia como familia. Muy agradecidos.",
+    "servicio": "Medicina Interna",
+    "estrellas": 5
+  }
+]
