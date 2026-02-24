@@ -95,25 +95,6 @@ export default function ServiciosPage() {
               </span>
             </Link>
 
-            {/* Cuneros */}
-            <Link href="/servicios/cuneros" className="servicio-hub-card" data-animate>
-              <div className="servicio-hub-card__icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z" />
-                </svg>
-              </div>
-              <h2 className="servicio-hub-card__title">Cuneros y Neonatología</h2>
-              <p className="servicio-hub-card__desc">
-                Atención especializada para recién nacidos con monitoreo continuo 24/7, enfermeras especializadas en neonatología, tamiz neonatal y vacunación.
-              </p>
-              <span className="servicio-hub-card__count">Cunero general y de cuidados especiales</span>
-              <span className="servicio-hub-card__link">
-                Ver cuneros
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </span>
-            </Link>
           </ScrollReveal>
         </div>
       </section>

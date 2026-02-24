@@ -15,7 +15,6 @@ export const mainNavigation: NavItem[] = [
       { label: "Especialidades", href: "/servicios/especialidades" },
       { label: "Procedimientos Quirúrgicos", href: "/servicios/paquetes" },
       { label: "Estudios de Imagen", href: "/servicios/estudios-imagen" },
-      { label: "Cuneros", href: "/servicios/cuneros" },
       { label: "Otros Servicios", href: "/servicios/estudios-imagen#otros-servicios" },
       { label: "Maternidad", href: "/maternidad" },
     ]
@@ -26,6 +25,7 @@ export const mainNavigation: NavItem[] = [
     children: [
       { label: "Todas las instalaciones", href: "/instalaciones" },
       { label: "Habitaciones", href: "/instalaciones/habitaciones" },
+      { label: "Cuneros", href: "/instalaciones/cuneros" },
       { label: "Farmacia", href: "/instalaciones/farmacia" },
       { label: "Cafetería", href: "/instalaciones/cafeteria" },
       { label: "Galería", href: "/instalaciones/galeria" },

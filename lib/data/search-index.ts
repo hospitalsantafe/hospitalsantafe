@@ -109,7 +109,7 @@ const staticPages: SearchItem[] = [
     description: 'Atención especializada para recién nacidos',
     category: 'pagina',
     keywords: ['cuneros', 'neonatologia', 'recien nacido', 'bebe', 'neonatal', 'tamiz'],
-    href: '/servicios/cuneros',
+    href: '/instalaciones/cuneros',
   },
 ];
 

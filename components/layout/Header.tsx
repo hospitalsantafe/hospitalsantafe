@@ -108,9 +108,6 @@ export default function Header() {
                 <Link href="/servicios/estudios-imagen" className="dropdown__link" role="menuitem">
                   Estudios de imagen
                 </Link>
-                <Link href="/servicios/cuneros" className="dropdown__link" role="menuitem">
-                  Cuneros
-                </Link>
                 <Link href="/maternidad" className="dropdown__link" role="menuitem">
                   Maternidad
                 </Link>
@@ -148,6 +145,9 @@ export default function Header() {
                 </Link>
                 <Link href="/instalaciones/habitaciones" className="dropdown__link" role="menuitem">
                   Habitaciones
+                </Link>
+                <Link href="/instalaciones/cuneros" className="dropdown__link" role="menuitem">
+                  Cuneros
                 </Link>
                 <Link href="/instalaciones/farmacia" className="dropdown__link" role="menuitem">
                   Farmacia
@@ -274,9 +274,6 @@ export default function Header() {
                 <Link href="/servicios/estudios-imagen" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Estudios de imagen
                 </Link>
-                <Link href="/servicios/cuneros" className="mobile-nav__sublink" onClick={closeMobileMenu}>
-                  Cuneros
-                </Link>
                 <Link href="/maternidad" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Maternidad
                 </Link>
@@ -313,6 +310,9 @@ export default function Header() {
                 </Link>
                 <Link href="/instalaciones/habitaciones" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Habitaciones
+                </Link>
+                <Link href="/instalaciones/cuneros" className="mobile-nav__sublink" onClick={closeMobileMenu}>
+                  Cuneros
                 </Link>
                 <Link href="/instalaciones/farmacia" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Farmacia

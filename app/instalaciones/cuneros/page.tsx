@@ -3,7 +3,7 @@ import ScrollReveal from '@/components/common/ScrollReveal';
 import VideoPlayer from '@/components/common/VideoPlayer';
 import { getWhatsAppUrl } from '@/lib/data/navigation';
 import horariosJson from '@/lib/data/horarios.json';
-import '../servicios.css';
+import '../../servicios/servicios.css';
 
 export const metadata = {
   title: 'Cuneros',
@@ -87,7 +87,7 @@ export default function CunerosPage() {
           <nav className="breadcrumb" aria-label="Breadcrumb">
             <Link href="/">Inicio</Link>
             <span className="breadcrumb__separator">/</span>
-            <Link href="/servicios">Servicios</Link>
+            <Link href="/instalaciones">Instalaciones</Link>
             <span className="breadcrumb__separator">/</span>
             <span className="breadcrumb__current">Cuneros</span>
           </nav>
@@ -111,7 +111,7 @@ export default function CunerosPage() {
                   nacido recibirá la mejor atención médica desde el primer momento.
                 </p>
                 <p data-animate>
-                  Contamos con personal de enfermería especializado en neonatología que vigila a cada bebé
+                  Contamos con personal de enfermería que vigila a cada bebé
                   de manera individualizada, asegurando que todas sus necesidades sean atendidas oportunamente.
                 </p>
               </ScrollReveal>

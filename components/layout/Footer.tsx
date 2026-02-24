@@ -39,7 +39,6 @@ export default function Footer() {
                             <li><Link href="/servicios/especialidades">Especialidades</Link></li>
                             <li><Link href="/servicios/estudios-imagen">Estudios de Imagen</Link></li>
                             <li><Link href="/servicios/paquetes">Procedimientos Quirúrgicos</Link></li>
-                            <li><Link href="/servicios/cuneros">Cuneros</Link></li>
                         </ul>
                     </div>
 
@@ -50,6 +49,7 @@ export default function Footer() {
                             <li><Link href="/nosotros">Quiénes Somos</Link></li>
                             <li><Link href="/instalaciones">Instalaciones</Link></li>
                             <li><Link href="/instalaciones/habitaciones">Habitaciones</Link></li>
+                            <li><Link href="/instalaciones/cuneros">Cuneros</Link></li>
                             <li><Link href="/instalaciones/galeria">Galería</Link></li>
                             <li><Link href="/contacto">Contacto</Link></li>
                         </ul>

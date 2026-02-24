@@ -85,6 +85,24 @@ export default function InstalacionesPage() {
               </div>
             </Link>
 
+            {/* Cuneros */}
+            <Link href="/instalaciones/cuneros" className="instalacion-hub-card" data-animate>
+              <div className="instalacion-hub-card__image">
+                <img
+                  src="/images/hospital/instalaciones/cuneros.webp"
+                  alt="Cuneros del Hospital Santa Fe"
+                />
+              </div>
+              <div className="instalacion-hub-card__content">
+                <h2>Cuneros</h2>
+                <p>Atención para recién nacidos con monitoreo continuo 24/7, seguridad de primer nivel y personal de enfermería dedicado.</p>
+                <span className="instalacion-hub-card__link">
+                  Ver cuneros
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </span>
+              </div>
+            </Link>
+
             {/* Galería */}
             <Link href="/instalaciones/galeria" className="instalacion-hub-card" data-animate>
               <div className="instalacion-hub-card__image">
