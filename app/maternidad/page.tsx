@@ -380,7 +380,6 @@ export default function MaternidadPage() {
                 <div className="container">
                     <ScrollReveal>
                         <div data-animate style={{ maxWidth: '400px', margin: '0 auto', textAlign: 'center' }}>
-                            <h3 style={{ marginBottom: 'var(--space-4)', color: 'var(--color-rosa-700)' }}>Conoce Nuestros Cuneros</h3>
                             <VideoPlayer src="/videos/maternidad.mp4" style={{ width: '100%', aspectRatio: '9/16' }} />
                         </div>
                     </ScrollReveal>

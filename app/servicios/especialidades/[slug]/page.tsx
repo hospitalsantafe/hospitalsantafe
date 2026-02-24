@@ -10,8 +10,9 @@ export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const especialidad = getEspecialidadBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const especialidad = getEspecialidadBySlug(slug);
   if (!especialidad) return { title: 'Especialidad no encontrada' };
 
   return {
@@ -20,8 +21,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function EspecialidadPage({ params }: { params: { slug: string } }) {
-  const especialidad = getEspecialidadBySlug(params.slug);
+export default async function EspecialidadPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const especialidad = getEspecialidadBySlug(slug);
 
   if (!especialidad) {
     notFound();
