@@ -19,10 +19,10 @@ export default function Footer() {
                     <div className="footer__column">
                         <Link href="/" className="footer__logo">
                             <img
-                                src="/images/logo-fondo-blanco.webp"
+                                src="/images/logo-circular.webp"
                                 alt="Hospital Santa Fe"
                                 width="160"
-                                height="53"
+                                height="160"
                                 className="footer__logo-img"
                             />
                         </Link>

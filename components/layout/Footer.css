@@ -45,11 +45,8 @@
 
 .footer__logo-img {
     display: block;
-    width: 160px;
+    width: 120px;
     height: auto;
-    background: white;
-    padding: 8px 12px;
-    border-radius: 10px;
     opacity: 0.95;
     transition: opacity var(--transition-fast);
 }

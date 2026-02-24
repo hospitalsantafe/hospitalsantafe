@@ -97,6 +97,7 @@
 .nav__link,
 .nav__link--dropdown {
     padding: var(--space-2) var(--space-4);
+    font-family: var(--font-body);
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
     color: var(--color-neutral-700);
@@ -294,6 +295,7 @@
     justify-content: space-between;
     width: 100%;
     padding: var(--space-4);
+    font-family: var(--font-body);
     font-size: var(--text-lg);
     font-weight: var(--font-medium);
     color: var(--color-neutral-700);
