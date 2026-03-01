@@ -15,6 +15,7 @@ export interface EstudioImagen {
   tipos?: EstudioTipo[];
   indicaciones?: string[];
   procedimiento?: string;
+  video?: string;
 }
 
 export interface OtroServicio {
@@ -148,7 +149,8 @@ export const estudiosImagen: EstudioImagen[] = [
       "Imágenes más detalladas de cara y movimientos: semana 24 a 32",
       "Para gemelos: realizar entre semana 22-28"
     ],
-    procedimiento: "Al concluir la exploración se entrega: informe con datos de posición, peso, anatomía fetal y función placentaria. Imágenes representativas en papel de cortes anatómicos (2D) y algunas de las imágenes más relevantes en 3D. Las imágenes obtenidas mediante ecografía 3D/4D se graban y entregan en formato DVD."
+    procedimiento: "Al concluir la exploración se entrega: informe con datos de posición, peso, anatomía fetal y función placentaria. Imágenes representativas en papel de cortes anatómicos (2D) y algunas de las imágenes más relevantes en 3D. Las imágenes obtenidas mediante ecografía 3D/4D se graban y entregan en formato DVD.",
+    video: "/videos/ecosonograma.mp4"
   },
   {
     id: "doppler",

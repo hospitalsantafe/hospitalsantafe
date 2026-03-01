@@ -48,6 +48,11 @@ export default function EstudiosImagenPage() {
           <div className="container">
             <ScrollReveal>
               <div className="highlight-section__content" data-animate>
+                {eco3d4d.video && (
+                  <div className="highlight-section__media">
+                    <VideoPlayer src={eco3d4d.video} style={{ width: '100%', aspectRatio: '9/16', maxHeight: '500px', borderRadius: 'var(--radius-xl)' }} />
+                  </div>
+                )}
                 <div className="highlight-section__text">
                   <h2>
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

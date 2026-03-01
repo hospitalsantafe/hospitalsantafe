@@ -1454,8 +1454,22 @@
 }
 
 .highlight-section__content {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    align-items: start;
+}
+
+.highlight-section__media {
+    justify-self: center;
+}
+
+@media (min-width: 768px) {
+    .highlight-section__content {
+        grid-template-columns: auto 1fr;
+    }
 }
 
 .highlight-section__text h2 {
