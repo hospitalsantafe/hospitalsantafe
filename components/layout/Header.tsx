@@ -149,6 +149,12 @@ export default function Header() {
                 <Link href="/instalaciones/cuneros" className="dropdown__link" role="menuitem">
                   Cuneros
                 </Link>
+                <Link href="/instalaciones/quirofanos" className="dropdown__link" role="menuitem">
+                  Quirófanos
+                </Link>
+                <Link href="/instalaciones/estacionamiento" className="dropdown__link" role="menuitem">
+                  Estacionamiento
+                </Link>
                 <Link href="/instalaciones/farmacia" className="dropdown__link" role="menuitem">
                   Farmacia
                 </Link>
@@ -313,6 +319,12 @@ export default function Header() {
                 </Link>
                 <Link href="/instalaciones/cuneros" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Cuneros
+                </Link>
+                <Link href="/instalaciones/quirofanos" className="mobile-nav__sublink" onClick={closeMobileMenu}>
+                  Quirófanos
+                </Link>
+                <Link href="/instalaciones/estacionamiento" className="mobile-nav__sublink" onClick={closeMobileMenu}>
+                  Estacionamiento
                 </Link>
                 <Link href="/instalaciones/farmacia" className="mobile-nav__sublink" onClick={closeMobileMenu}>
                   Farmacia
