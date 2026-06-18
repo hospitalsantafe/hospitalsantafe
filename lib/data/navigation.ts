@@ -26,6 +26,8 @@ export const mainNavigation: NavItem[] = [
       { label: "Todas las instalaciones", href: "/instalaciones" },
       { label: "Habitaciones", href: "/instalaciones/habitaciones" },
       { label: "Cuneros", href: "/instalaciones/cuneros" },
+      { label: "Quirófanos", href: "/instalaciones/quirofanos" },
+      { label: "Estacionamiento", href: "/instalaciones/estacionamiento" },
       { label: "Farmacia", href: "/instalaciones/farmacia" },
       { label: "Cafetería", href: "/instalaciones/cafeteria" },
       { label: "Galería", href: "/instalaciones/galeria" },
