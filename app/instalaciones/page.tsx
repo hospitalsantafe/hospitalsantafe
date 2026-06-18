@@ -103,6 +103,42 @@ export default function InstalacionesPage() {
               </div>
             </Link>
 
+            {/* Quirófanos */}
+            <Link href="/instalaciones/quirofanos" className="instalacion-hub-card" data-animate>
+              <div className="instalacion-hub-card__image">
+                <img
+                  src="/images/hospital/instalaciones/quirofanos-1.webp"
+                  alt="Quirófanos del Hospital Santa Fe"
+                />
+              </div>
+              <div className="instalacion-hub-card__content">
+                <h2>Quirófanos</h2>
+                <p>Equipados con la tecnología necesaria para procedimientos quirúrgicos seguros, con personal capacitado y protocolos de seguridad.</p>
+                <span className="instalacion-hub-card__link">
+                  Ver quirófanos
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </span>
+              </div>
+            </Link>
+
+            {/* Estacionamiento */}
+            <Link href="/instalaciones/estacionamiento" className="instalacion-hub-card" data-animate>
+              <div className="instalacion-hub-card__image">
+                <img
+                  src="/images/hospital/instalaciones/estacionamiento-1.webp"
+                  alt="Estacionamiento del Hospital Santa Fe"
+                />
+              </div>
+              <div className="instalacion-hub-card__content">
+                <h2>Estacionamiento</h2>
+                <p>Estacionamiento amplio dentro de las instalaciones, estratégicamente ubicado para una llegada cómoda y segura al hospital.</p>
+                <span className="instalacion-hub-card__link">
+                  Ver estacionamiento
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </span>
+              </div>
+            </Link>
+
             {/* Galería */}
             <Link href="/instalaciones/galeria" className="instalacion-hub-card" data-animate>
               <div className="instalacion-hub-card__image">
